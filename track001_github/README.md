@@ -24,9 +24,11 @@
 ---
 <!-- 이름, 이메일, 깃허브주소, 포트폴리오 2*4 테이블형식으로 -->
 ## Contact & Links
-![프로파일](./track001_github/3099502_man_astronaut_icon.png)
-<img src="./track001_github/5980341_carrier_coronavirus_epidemic_human_infectious_icon.png" alt="프로필" width="50">
-|이름|최상욱 
+![프로파일](./3099502_man_astronaut_icon.png)
+
+
+
+|이름|최상욱 <img src="./3099502_man_astronaut_icon.png" alt="프로파일" width="50">|
 |-|-|
 |**이메일**|gforce74@naver.com|
 |**포트폴리오**|🤞💖|
