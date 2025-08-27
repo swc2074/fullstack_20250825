@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>002. tag</title>
+</head>
+<body>
+    <div>
+
+        <h3> 제목 : h1~h6</h3>
+        <p>제목태그 -  h1(로고), h2(주메뉴)</p>
+    </div><!--- end div -->
+    <div>
+        <h3>문단</h3>
+        <P>
+            일반문단
+            공백 줄바꿈 인식 안됨
+        </P>
+        <pre>
+            코드, 미리보기문단
+            공백 줄바꿈 인식됨
+        </pre>
+    </div><!-- end div -->
+
+    <div>
+        <h3>img</h3>
+        <p>Hello sally!</p>
+        <p><img src="./img/1.png" 
+                style="width:20%"
+                alt=" one "/></p>
+        <!-- Q1. two.png 이미지 넣기 -->
+         <p><img src="./img/2.png" 
+                  style="width:20%"
+                  alt="two"/></p>
+        <!-- Q2. friends 폴더안의 jack.png 화면에 나오게 만들기 -->
+         <p><img src="./img/friends/5929109_avatar_dizziness_man_people_sick_icon.png"
+                  style="width:20%"
+                  alt="sick_icon"/></p>
+        <!-- Q3. test 사진 -->
+         <p><img src="./img/3099418_man_singer_icon.png"
+                  style="width:10%"
+                  alt="singer_icon"/></p>
+        <!-- Q4. test 2 사진 -->
+    </div>
+
+    <div>
+        <h3>링크</h3>
+        <p>
+            <a href="https://github.com/swc2074/fullstack_20250825"
+               target="_blank"
+               title="새창열기">
+                MY GITHUB
+            </a>
+        
+        </p>
+        <!-- Q 좋아하는 이미지 클릭시 본인 깃허브 링크로 넘어가기 -->
+         <h3>이미지 링크 만들기</h3>
+         <P>
+            <a href="https://github.com/swc2074/fullstack_20250825"
+               target="_blank">
+               <img src="./img/3099502_man_astronaut_icon.png"
+                    style="width:10%"
+                    alt="이미지 링크 astronaut"/>
+            </a>
+         </P>
+    </div>
+    <!-- validator.w3.org-->
+    <div>
+        <h3>링크 test</h3>
+        <a href="https://github.com/swc2074/fullstack_20250825"
+           target="_blank">
+           My link 🏍
+           <img src="./img/"
+                style="width:10%"
+                alt="이미지 링크">
+        </a>
+        
+    </div>
+
+</body>
+</html>
