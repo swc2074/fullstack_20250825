@@ -46,16 +46,38 @@ public class Operator001 {
 		//Q1. a가 2의 배수이면서 5의 배수라면 true/false
 		System.out.println(a%2 == 0 && a%5 == 0);
 		//Q2. a가 2의 배수이거나 3의 배수라면 true/false
-		System.out.println(a%2 == 0 || a%5 == 0);
+		System.out.println(a%2 == 0 || a%3 == 0);
 		
 		//4. 삼항 연산자 (조건)? 참: 거짓
-		System.out.print( a ==10 );
+		System.out.print( a ==10 ? "10이다": " 10입니다.");
 		
 		//Q3. 숫자를 입력받아 0보다크면 양수, 0 보다 작으면 음수, 아니라면 0
-		
+		/*
 		Scanner scanner = new Scanner(System.in);
 		int q3 = scanner.nextInt();
 		String result = q3 > 0 ? "양수" : q3 < 0 ? "음수" : "0";
+		*/
+		
+		//5. 대입연산자
+		a=10; b=3;
+		System.out.println( "1: " +   ( a+= b));  // 1) a+b 2) a=13
+		System.out.println( "2: " +   ( a-= b));  // 1) a-b 2) a=10
+		
+		
+		//6. 단항
+		int a1 = 1, b1 = 1, c1 = 1, d1 = 1;
+		
+		System.out.println( ++a1 ); //2  증가 출력
+		System.out.println( a1 );   //2 
+		
+		System.out.println( b1++);  //1 출력 증가
+		System.out.println( b1 );   //2 
+		
+		System.out.println( --c1 ); //0 감소 출력
+		System.out.println( c1 );   //0
+		
+		System.out.println( d1-- ); //1  출력 감소
+		System.out.println( d1 );   //0 
 		
 		
 	}
