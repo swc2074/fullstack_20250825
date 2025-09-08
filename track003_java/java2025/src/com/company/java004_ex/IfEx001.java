@@ -6,6 +6,7 @@ public class IfEx001 {
 	public static void main(String[] args) {
 		
 	//변수
+		String result = "불합격";
 		Scanner scanner = new Scanner(System.in);
 		
 		
@@ -18,7 +19,7 @@ public class IfEx001 {
 		else {            System.out.println("불합격");}
 		
 		//출력
-		
+		System.out.println( avg>=60 ? "합격" : "불합격");
 		scanner.close();
 	}
 

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        *{margin:0; padding:0; box-sizing:border-box;}
+        body{background-image:linear-gradient(135deg,#0de21b,#12bfd6);
+             font-family:Arial, Helvetica, sans-serif;
+             padding: 30px;}
+        h3{text-align: center;
+            color:#00796b;
+            margin-bottom:40px;}
+        .container{width:50%;
+                    margin:auto;}
+        .card{float:left;
+              width:250px;
+              margin: 20px;
+              padding: 20px;
+              background-color:#ffffff;
+              border-radius: 15px;
+              box-shadow: 0 0 10px rgba(0,0,0,1.0);
+              position:relative;
+              text-align: center;
+              /* 애니메이션 */
+              transition: all 0.3s ease;
+              transform:translateY(20px);
+              border: 3px solid transparent;
+              background-clip: padding-box;
+              opacity: 0; /* 화면에 안보이기 - 투명도*/
+              animation:fadeInUp 0.8s ease forwards;
+               /* 애니메이션이름 지속시간 처음과끝 느리게 애니메이션끝나도 마지막까지 유지*/
+               }
+             .card:nth-of-type(1){
+                animation-delay: 0.1s;
+               
+             }
+
+             /* css에서는 border에 그라디언트색상을 줄수 없음!
+              1) :: before 가상요소 카드보다 살짝 크게 만들기 */
+        .card::before {
+                content:"";
+                position: absolute;
+                top:3px; left:3px;right:3px; bottom:3px;
+                background-image:linear-gradient(45deg, #ec0e0e,#a4ae17);
+                opacity:0.5;
+                z-index:-1;
+                border-radius: 15px;
+                transition: opacity 0.5s ease;
+              }
+        .card:hover::before {
+                opacity:1;
+              }
+        .card:nth-of-type(2){
+                animation-delay: 0.5s;
+               
+             }
+        .card:nth-of-type(3){
+                animation-delay: 1s;
+              
+             }
+
+        .card:hover {
+            transform: translateY(5px);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            opacity: 1;
+
+        }
+        .card img{ 
+            width: 120px;
+            height: 80px;
+            border-radius:10px;
+            object-fit: cover;
+            border: 3px solid #00796b;
+        }
+
+        h4 {font-size: 18px;
+             margin-top: 15px;
+             margin-bottom: 10px;
+             color:#333;}
+
+        .card p {font-size: 14px;
+                 color:#555;
+                 margin-bottom:  10px;}
+        .card .more{
+                  position: absolute; top: 10px; right: 10px;
+                  background:#ddd; color:white;
+                  padding: 8px; border-radius: 12px; 
+                  font-size: 13px; text-decoration: none;
+                  transition:background 0.3s ease;
+
+        }
+
+        .card .more:hover {
+            background-color: #77d30edd;
+           
+            animation: shake 0.3s ease-in-out;
+        }
+        .clear{clear:both;
+                margin-top: 390px; 
+                padding: 15px;
+                background-color:#dddd;
+                color:#00796b;text-align:center;}
+
+        @keyframes fadeInUp {
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes shake{
+            0% {transform: translate(0,0);}
+            25% {transform: translate(2px,2px);}
+            50% {transform: translate(-2px,-2px);}
+            75% {transform: translate(2px,-2px);}
+            100% {transform: translate(0,0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>나의 포트폴리오</h3>
+        <div class="card">
+            <p><img src="./img/project_img/portfolio1.jpg" alt="쇼핑몰"/></p>
+            <h4>쇼핑몰 웹앱</h4>
+            <p>React + Firebase 기반의 쇼핑몰 웹 애플리케이션</p>
+            <p>사용 기술: React, Firebase, Styled-components</p>
+            <a href="http://127.0.0.1:5500/fullstack_20250825/track002_webbasic/web005_2.html "
+               title="더보기"
+               class="more"> 더보기</a>
+        </div>
+        <div class="card">
+            <p><img src="./img/project_img/portfolio1.jpg" alt="쇼핑몰"/></p>
+            <h4>AI 챗봇 서비스</h4>
+            <p>Python 기반의 자연어 처리 챗봇 시스템
+</p>
+            <p>사용 기술: Flask, TensorFlow, NLP</p>
+            <a href="http://127.0.0.1:5500/fullstack_20250825/track002_webbasic/web005_2.html "
+               title="더보기"
+               class="more"> 더보기</a>
+        </div>
+        <div class="card">
+            <p><img src="./img/project_img/portfolio1.jpg" alt="쇼핑몰"/></p>
+            <h4>AI 생성형</h4>
+            <p>Python 기반의 자연어 처리 챗봇 시스템
+</p>
+            <p>사용 기술: Flask, TensorFlow, NLP</p>
+            <a href="http://127.0.0.1:5500/fullstack_20250825/track002_webbasic/web005_2.html "
+               title="더보기"
+               class="more"> 더보기</a>
+        </div>
+        <div class="clear">
+            <p>이 포트폴리오는 실제 프로젝트를 기반으로 구성되었으며, 각 프로젝트는 GitHub에서 확인할 수 있습니다.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

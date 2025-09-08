@@ -16,6 +16,7 @@ public class IfEx003 {
 		else if ( num == 2) {System.out.println("two");}
 		else if ( num == 3) {System.out.println("three");}
 		else {     System.out.println("1,2,3이 아니다");}
+				
 		
 		// 출력
 		
