@@ -149,3 +149,316 @@ $ git commit -m "Merge conflict 해결 및 병합 완료"
 - [Markdown 가이드](https://www.markdownguide.org/basic-syntax/)  
 - [VS Code 공식 사이트](https://code.visualstudio.com/)  
 - [AI 프롬프트 작성 팁](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/prompt-engineering)
+
+
+'''bash 
+
+2025.09.09 트러블 슈팅
+package com.company.java006_ex;
+
+import java.util.Scanner;
+
+public class ForEx006 {
+	public static void main(String[] args) {
+		// 변수
+		int a, b;
+		char ch;
+
+		Scanner scanner = new Scanner(System.in);
+
+		// 입력
+		for (;;) {
+			System.out.println("1. 정수를 하나 입력해주세요>");
+			a = scanner.nextInt();
+			if (a < 100) {
+				break;
+			}
+		}
+		for (;;) {
+			System.out.println("2. 정수를 하나 입력해주세요>");
+			b = scanner.nextInt();
+			if (b < 100) {
+				break;
+			}
+		}
+
+		for (;;) {
+
+			System.out.println("3. 연산자를 입력해주세요(+,-,*,/)>");
+			ch = scanner.next().charAt(0);
+			if (ch == '+') {
+				break;
+			} else if (ch == '-') {
+				break;
+			} else if (ch == '*') {
+				break;
+			} else if (ch == '/') {
+				break;
+			}
+		}
+		// 처리
+
+		switch (ch) {
+		case '+':
+			System.out.printf("%d" + "%s" + "%d" + "=" + "%d", a, ch, b, a + b);
+			System.out.println();
+		case '-':
+			System.out.printf("%d" + "%s" + "%d" + "=" + "%d", a, ch, b, a - b);
+			System.out.println();
+		case '*':
+			System.out.printf("%d" + "%s" + "%d" + "=" + "%d", a, ch, b, a * b);
+			System.out.println();
+		case '/':
+			System.out.printf("%d" + "%s" + "%d" + "=" + "%.2f", a, ch, b, ((double) a / b));
+		}
+
+		// 출력
+
+		scanner.close();
+
+	}
+
+}
+```
+``` 수정파일
+package com.company.java006_ex;
+
+import java.util.Scanner;
+
+public class ForEx006 {
+	public static void main(String[] args) {
+		// 변수
+		int a, b;
+		char ch;
+		double result = 0;
+
+		Scanner scanner = new Scanner(System.in);
+
+		// 입력
+		for (;;) {
+			System.out.println("1. 정수를 하나 입력해주세요>");
+			a = scanner.nextInt();
+			if (a>=0 && a<=100) {
+				break;
+			}
+		}
+		for (;;) {
+			System.out.println("2. 정수를 하나 입력해주세요>");
+			b = scanner.nextInt();
+			if (b>=0 && b<=100) {
+				break;
+			}
+		}
+
+		for (;;) {
+			System.out.println("3. 연산자를 입력해주세요(+,-,*,/)>");
+			ch = scanner.next().charAt(0);
+			if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+				break;
+			}
+		}
+		// 처리
+
+		switch (ch) {
+		case '+':result = a+b;break;	
+		case '-':result = a-b;break;	
+		case '*':result = a*b;break;
+		case '/':result = (double)a/b;break;
+			
+		}
+
+		// 출력
+		System.out.println(" " + a + ch + b + " = " + (ch != '/' ? "" + (int)result : String.format("%.2f",result)));
+
+		
+
+	}
+
+}
+```
+2025 0909 트러블 슈팅 (2)
+package com.company.java005_ex;
+
+import java.util.Scanner;
+
+public class Bank_ver2 {
+	public static void main(String[] args) {
+		// 변수
+		int num; String id, pass; double balance;
+		Scanner scanner = new Scanner(System.in);
+
+		// 입력 + 처리 + 출력
+		System.out.println("WELCOME ! (주) CODE BANK");
+		for (;;) {
+			System.out.print("===== CODE BANK =====\n*" + " 1. 추가\n* 2. 조회\n* 3. 입금\n* 4. 출금\n* 5. 삭제\n* 9. 종료\n입력>>>");
+			num = scanner.nextInt();
+			if (num == 9) { System.out.println(" ATM을 종료합니다.");
+				break;
+			}
+			switch (num) {
+			case 1:
+				System.out.println(" 1. 추가기능입니다.");
+				System.out.println("아이디 입력");id = scanner.next();
+				System.out.println("비밀번호 입력");pass = scanner.next();
+				System.out.println("잔액입력");balance =scanner.nextDouble();
+				//아이디입력 > _입력받기
+				//비밀번호입력 > _입력받기
+				//잔액입력    > _입력받기
+			break;
+			case 2:
+				
+				System.out.println("아이디:" );
+				id = scanner.next();
+				System.out.println("비밀번호:");
+				pass = scanner.next();
+				System.out.println("잔액입력");
+				balance =scanner.nextDouble();
+			break;
+			case 3:
+				System.out.println(" 3. 입금기능입니다.");
+				System.out.println("아이디:" );
+				id = scanner.next();
+				System.out.println("비밀번호:");
+				pass = scanner.next();
+				System.out.println("잔액입력");
+				balance =scanner.nextDouble();
+			break;
+			case 4:
+				System.out.println(" 4. 출금기능입니다.");
+			break;
+			case 5:
+				System.out.println(" 5. 삭제기능입니다.");
+			break;
+			
+			}
+		}
+	}
+
+}
+
+/*
+ * 하루에 하나씩 힌트 다음주 까지 숙제
+ * 
+ * Step1. 무한반복으로 만드는 메뉴만들기
+ * 
+ * for(;;){ // 1-1 무한반복 // 1-2 빠져나올 조건 9 ///1-3 입력받은 번후가 if or switch /// ///1을
+ * 입력하면 추가기능입니다.. 출력구문까지만 ///2을 입력하면 조회기능입니다.. 출력구문까지만 ///3을 입력하면 입금기능입니다..
+ * 출력구문까지만 ///4을 입력하면 출금기능입니다.. 출력구문까지만 ///5을 입력하면 삭제기능입니다.. 출력구문까지만 ///6을 입력하면
+ * 종료기능입니다.. 출력구문까지만 ///7을 입력하면 추가기능입니다.. 출력구문까지만 /// /// ///}
+ */
+ ```
+ ```
+ 2025 0909 트러블 슈팅 (3)
+ package com.company.java005_ex;
+
+import java.util.Scanner;
+
+public class Bank_ver4_sam {
+   public static void main(String[] args) {
+      // 변수
+      int num;
+      String id = null, pass = null;
+      double balance = 0;
+      Scanner scanner = new Scanner(System.in);
+
+      // 입력 + 처리 + 출력
+      System.out.println("WELCOME ! (주) CODE BANK");
+      for (;;) {
+         System.out.print("===== CODE BANK =====\n*" + " 1. 추가\n* 2. 조회\n* 3. 입금\n* 4. 출금\n* 5. 삭제\n* 9. 종료\n입력>>>");
+         num = scanner.nextInt();
+         if (num == 9) { System.out.println(" ATM을 종료합니다."); break; }
+         
+         switch (num) {
+         case 1:
+            System.out.println(" 1. 추가기능입니다.");
+            System.out.println("아이디 입력");
+            id = scanner.next();
+            System.out.println("비밀번호 입력");
+            pass = scanner.next();
+            System.out.println("잔액입력");
+            balance = scanner.nextDouble();
+            // 아이디입력 > _입력받기
+            // 비밀번호입력 > _입력받기
+            // 잔액입력 > _입력받기
+            break;
+         case 2: {
+            System.out.println(" 2. 조회기능입니다.");
+            String temid, tempass;
+            // 입력 2-1 사용자에게 임시아이디와 임시비밀번호 입력 받기
+            // 2-2 아이디와 임시아이디가 같아야한고 비번과 임시비밀번호가 같다면 사용자정보 출력
+            // 2-3 다르면 정보를 확인해 주세요.
+            System.out.println("아이디:");
+            temid = scanner.next();
+            System.out.println("비밀번호:");
+            tempass = scanner.next();
+            if (id.equals(tempass) && pass.equals(tempass)) {
+               System.out.print("==🎈🎈 조회\n" + "ID:" + id + "\n" + "pass:" + pass + "\n" + "나이: 1" + "\n"
+                     + "잔액:" + balance+"\n");
+            } else {
+               System.out.println("정보를 확인해주세요");
+            }
+
+         }
+            break;
+         case 3:{
+            System.out.println(" 3. 입금기능입니다.");
+            
+            // 변수 
+            String temid = null, tempass = null;
+            double income = 0 ;
+            // 입력 사용자에게 임시아이디와 임시비밀번호 입력받기
+            // 처리 if ( 아이디와 임시아이디가 같고 비번과 임시비번이 같다면 ) { 돈입력 받아서, 잔액에서 추가}
+            // 출력 else { 아니라면 정보를 확인해주세요.}
+            System.out.println("아이디:");temid = scanner.next();
+            System.out.println("비밀번호:");tempass = scanner.next();
+
+            if(id.equals(temid) && pass.equals(tempass)) {            
+               System.out.println("입금");income = scanner.nextDouble();
+               balance += income;
+               System.out.print("==입금완료\n" + "잔액:" + balance + "\n");
+            }else {System.out.println(" 정보를 확인해 주세요");}
+         }break;
+         case 4:{
+            System.out.println(" 4. 출금기능입니다.");
+            
+
+            // 변수 
+            // 입력 사용자에게 임시아이디와 임시비밀번호 입력받기
+            // 처리 if ( 아이디와 임시아이디가 같고 비번과 임시비번이 같다면 ) { 돈입력 받아서, 잔액에서 빼기}
+            // 출력 else { 아니라면 정보를 확인해주세요.}
+            String temid1 = null, tempass1 = null;
+            double outcome = 0;
+            System.out.println("아이디:");temid1 = scanner.next();
+            System.out.println("비밀번호:"); tempass1 = scanner.next();
+            if(id.equals(temid1) && pass.equals(tempass1)) {
+               System.out.println("출금"); outcome = scanner.nextDouble();
+               balance -= outcome;
+               System.out.print("==출금완료\n" + "잔액:" + balance + "\n");
+            }else {System.out.println(" 정보를 확인해 주세요");}
+            
+         }break;
+         case 5:{
+            System.out.println(" 5. 삭제기능입니다.");
+            // 변수 
+            // 입력 사용자에게 임시아이디와 임시비밀번호 입력받기
+            // 처리 if ( 아이디와 임시아이디가 같고 비번과 임시비번이 같다면 ) { 
+            //      삭제하시겠습니까? 묻고 yes면 정보삭제 -  id = null, pass = null;  balance = 0;    }
+            // 출력 else { 아니라면 정보를 확인해주세요.}
+            String temid2 = null, tempass2 = null; 
+            char Del = ' ';
+            System.out.println("아이디:"); temid2 = scanner.next();
+            System.out.println("비밀번호:"); tempass2 = scanner.next();
+            System.out.println(" 삭제하시겠습니까?"); 
+            Del = scanner.next().charAt(0);
+            if (Del == 'y') {System.out.print(" 정보 삭제했습니다."); 
+                           Del = scanner.next().charAt(0);}
+            else {System.out.println(" 정보를 확인해 주세요");   
+            }
+         }break;
+         
+         }
+      }
+   }
+
+}
+```

@@ -30,6 +30,7 @@ public class Repeat011 {
 		// 출력
 		System.out.println(result);
 		
+		scanner.close();
 	}
 
 }
