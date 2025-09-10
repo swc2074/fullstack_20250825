@@ -206,22 +206,23 @@
     */
     .bubble {
       position: fixed;   bottom: -100px;
-      width: 20px;  height: 20px;  background: rgba(0, 121, 107, 0.2); /* 청록색 반투명 */
+      width: 20px;  height: 20px;  background: rgba(8, 48, 211, 0.2); /* 청록색 반투명 */
       border-radius: 50%;
-      animation: rise 8s infinite ease-in;
+      animation: rise 5s infinite ease-in;
       z-index: 0;
     }
 
     @keyframes rise{
       0%{  transform:translateY(0)        scale(1);          opacity:0.5; }
-      50%{ transform:translateY(-300px)   scale(1.2);        opacity:1;   }
-      100%{transform:translateY(-600px)   scale(0.8);        opacity:0;   }
+      50%{ transform:translateY(-600px)   scale(2);        opacity:1;   }
+      100%{transform:translateY(-1200px)   scale(0.8);        opacity:2;   }
     } 
     .bubble:nth-of-type(1) { left: 10%; animation-delay: 0s; }
-    .bubble:nth-of-type(2) { left: 25%; animation-delay: 2s; width: 15px; height: 15px; }
+    .bubble:nth-of-type(2) { left: 25%; animation-delay: 10s; width: 150px; height: 150px; }
     .bubble:nth-of-type(3) { left: 40%; animation-delay: 4s; width: 25px; height: 25px; }
-    .bubble:nth-of-type(4) { left: 60%; animation-delay: 1s; width: 18px; height: 18px; }
+    .bubble:nth-of-type(4) { left: 60%; animation-delay: 5s; width: 18px; height: 18px; }
     .bubble:nth-of-type(5) { left: 75%; animation-delay: 3s; width: 22px; height: 22px; }
+    .bubble:nth-of-type(6) { left: 90%; animation-delay: 8s; width: 100px; height: 100px; }
 
   </style>
 </head>
@@ -258,6 +259,7 @@
     </div>
   </div>
 
+   <div class="bubble"></div>
    <div class="bubble"></div>
    <div class="bubble"></div>
    <div class="bubble"></div>
