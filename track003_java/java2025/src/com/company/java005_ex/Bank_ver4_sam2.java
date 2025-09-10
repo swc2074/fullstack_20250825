@@ -2,13 +2,14 @@ package com.company.java005_ex;
 
 import java.util.Scanner;
 
-public class Bank_ver4_sam {
+public class Bank_ver4_sam2 {
    public static void main(String[] args) {
       // 변수
       int num;
       String id = null, pass = null;
       double balance = 0;
       Scanner scanner = new Scanner(System.in);
+      
 
       // 입력 + 처리 + 출력
       System.out.println("WELCOME ! (주) CODE BANK");
