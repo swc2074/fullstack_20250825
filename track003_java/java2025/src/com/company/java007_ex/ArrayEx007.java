@@ -9,8 +9,6 @@ public class ArrayEx007 {
 		
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = data++;
-		
-		
 		}
 		//출력
 		for (int i = 0; i<arr.length; i++) {

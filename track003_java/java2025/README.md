@@ -1,199 +1,276 @@
 
 ---
-# 🎯 최상욱 |Java 개발자 
 
-> 
+# 🎯 최상욱 | 실전형 Java 개발자 포트폴리오
 
----
+> 완벽보다는 완성을 향해
+> **기초 문법부터 객체지향, 실전 프로젝트까지 책임지는 개발자**
+> 단순히 코드를 작성하는 수준을 넘어
+> **자료구조와 알고리즘 기반의 문제 해결 능력**,
+> **객체지향 원리(OOP)와 디자인 패턴 적용 경험**으로
+> **현업에서 바로 활용 가능한 개발 역량**을 키워왔습니다.
 
-<br/>
+* 💡 **문법 암기보다는 개념 이해**를 바탕으로, 문제 해결에 필요한 최적의 코드 작성
+* 🧠 **자료구조, 알고리즘, JVM 메모리 구조 등 CS 핵심 지식**을 Java에 적용
+* 🤝 **프로젝트 단위 협업 경험**과 **Git·GitHub**을 통한 코드 관리 능력 보유
+* 🚀 **에러와 예외 처리 중심의 트러블슈팅 경험**으로 서비스 품질 개선
 
----
-<!-- 이름, 이메일, 깃허브주소, 포트폴리오 2*4 테이블형식으로 -->
-## Contact & Links
-![프로파일](./track001_github/3099502_man_astronaut_icon.png)
-<img src="./track001_github/5980341_carrier_coronavirus_epidemic_human_infectious_icon.png" alt="프로필" width="50">
-|이름|최상욱 
-|-|-|
-|**이메일**|gforce74@naver.com|
-|**포트폴리오**|🤞💖|
-|**깃허브주소**|https://github.com/swc2074/fullstack_20250825|
-
----
-<!-- track001 github -->
-## 🚀Golds
-- Gitthub의 **핵심기능 협업기능** 이해하고 실습함.
-- markdown을 활용한 **간결한 문서작성가능**
-- 협업을 위한 github **`협업위한 워크플로워 능력 습득`**
-- ai도구와 함께하는 **`협업 및 업무향상`**
-
-
-
----
-<!-- cs와 연결지어서 -->
-## ✔ 기술스택 기반 cs역량
-- git & github
-- markdown
-- vs code
-- html5
-- css3
-- ai 프롬프트
-
-| 🔧 기술스택       | 💡 CS 기반 이해 및 활용 능력 강조                                                                 |
-|------------------|---------------------------------------------------------------------------------------------|
-| **Git & GitHub** | **분산 버전 관리 시스템의 구조**를 이해하고, 브랜치 전략(Git Flow)을 **실무에 능숙하게 적용**함. <br> Merge Conflict 시 트리 구조와 해시 기반 저장 원리를 고려하여 **안정적인 병합 수행**. |
-| **Markdown**     | 문서 구조화와 정보 설계 원리를 바탕으로 **가독성 높은 협업 문서 작성**. <br> README, Wiki, 이슈 템플릿 등에서 **사용자 흐름을 고려한 표현 능력** 보유. |
-| **VS Code**      | IDE의 작동 원리와 **디버깅, 확장 기능, Linting 도구를 적극 활용**하여 개발 생산성 극대화. <br> 파일 시스템과 메모리 구조를 고려한 **문제 원인 분석 능력** 보유. |
-| **HTML5**        | DOM 구조와 트리 기반 렌더링 원리를 이해하고, **접근성과 유지보수성을 고려한 시맨틱 마크업 작성**. <br> SEO 최적화와 UX 향상에 기여. |
-| **CSS3**         | 박스 모델, Flex/Grid 레이아웃 알고리즘 등 렌더링 엔진 원리를 기반으로 **구조적이고 반응형 UI 설계**. <br> 미디어 쿼리와 성능 최적화를 **실무에 적용**. |
-| **AI 프롬프트**  | NLP 모델의 토큰화, 컨텍스트 길이 등 내부 구조를 이해하고, **프롬프트 최적화를 통해 자동화 기능 구현**. <br> 실제 서비스에 적용 가능한 **AI 활용 역량** 보유. |
-
-<br/>
-<br/>
-<br/>
-
----
-<!-- JAVA, HTML+CSS+>
-## 🥕포트폴리오
-
-<!-- 정리한 내용 1,2일 차 내용 -->
-## 트러블 슈팅 (github에서 발생)
-
-<br/> 트러블슈팅 (1)
-```bash
-TJ-BU-703-P03@DESKTOP-5CVIKGS MINGW64 /c/KIMYOUNGMIN/workspace (master)
-$ git commit -m "git 수정 후 다시올리기"
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)       
-        modified:   day001.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
+> “Java는 언어일 뿐, 중요한 건 문제 해결 능력”
+> **최상욱은 현업에 바로 기여할 수 있는 Java 실무형 개발자입니다.**
 
 ---
 
-🛠️ 트러블슈팅 (1) — Git 커밋 실패
+## 📞 Contact & Links
 
-```bash
-$ git commit -m "git 수정 후 다시올리기"
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-        modified:   day001.md
+| 이름         | 최상욱                                                                                             |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| **이메일**    | [gforce74@naver.com](mailto:gforce74@naver.com)                                                 |
+| **GitHub** | [https://github.com/swc2074/fullstack\_20250825](https://github.com/swc2074/fullstack_20250825) |
+| **포트폴리오**  | Java 기반 학습 & 프로젝트 기록                                                                            |
 
-no changes added to commit (use "git add" and/or "git commit -a")
+---
+
+## 🚀 Golds (핵심 성과)
+
+* Java의 **기초 문법부터 객체지향(OOP)까지 완전 정복**
+* 예외 처리, 컬렉션 프레임워크 등 **실무 핵심 기능 실습 경험**
+* GitHub와 연계하여 **프로젝트 관리 및 협업 경험 확보**
+* **문제 발생 시 스스로 해결하는 트러블슈팅 역량**을 체득
+
+---
+
+## ✔ 기술스택 기반 CS 역량
+
+| 🔧 기술스택          | 💡 CS 기반 이해 및 활용 능력 강조                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Java**         | JVM 메모리 구조(Heap, Stack, GC)를 이해하고 코드 효율성을 고려한 작성 가능. <br> OOP(캡슐화·상속·다형성)와 디자인 패턴을 실무 코드에 적용.                    |
+| **자료구조/알고리즘**    | Array, LinkedList, Stack, Queue, HashMap 등 Java Collection 활용. <br> 시간복잡도(Big-O)를 고려한 효율적 문제 해결 능력.              |
+| **예외 처리**        | Checked/Unchecked Exception 구분 및 `try-catch-finally`, `throw/throws`를 활용한 안정적 프로그램 설계.                           |
+| **입출력 (I/O)**    | Java I/O Stream, NIO 이해 및 파일 처리 구현 가능. <br> Buffer와 Stream의 차이를 구조적으로 이해.                                        |
+| **멀티스레드**        | Thread, Runnable, ExecutorService를 활용해 동시성 제어 경험. <br> 동기화(`synchronized`, `volatile`)를 통한 Race Condition 해결 경험. |
+| **Git & GitHub** | 분산 버전 관리 시스템 이해 및 브랜치 전략(Git Flow) 적용. <br> 협업을 위한 Pull Request·Merge Conflict 해결 능력 보유.                         |
+
+---
+
+## 🥕 포트폴리오
+
+### 📂 Java 실습 프로젝트 & 트러블슈팅
+
+---
+
+🛠️ 트러블슈팅 (1) — `NullPointerException` 발생
+
+```java
+public class ArrayEx {
+    public static void main(String[] args) {
+        String[] names = new String[5];
+        System.out.println(names[0].length()); // ❌ NPE 발생
+    }
+}
 ```
 
 #### 1. ❌ 문제점
-- `day001.md` 파일이 수정되었지만 **`git add` 명령어를 통해 staging 영역에 올리지 않은 상태**에서 커밋을 시도함.
-- 결과적으로 Git은 커밋할 변경사항이 없다고 판단하여 커밋이 실패함.
+
+* `names[0]`은 초기화되지 않은 상태(null)인데 `.length()` 호출 → **NullPointerException** 발생
 
 #### 2. ✅ 해결방안
-- 아래 명령어를 통해 수정된 파일을 staging 영역에 추가한 후 커밋을 다시 수행함:
 
-```bash
-$ git add day001.md
-$ git commit -m "day001.md 수정사항 반영"
+```java
+names[0] = "아이언맨";
+System.out.println(names[0].length()); // 정상 출력
 ```
 
 #### 3. 💡 느낀점
-- Git은 **작업 디렉토리와 staging 영역을 명확히 구분**하므로, 커밋 전에는 반드시 `git status`를 확인하고 변경사항을 staging에 올려야 함.
-- 단순한 실수지만, 협업 중이라면 **커밋 누락으로 인해 팀원에게 혼선을 줄 수 있는 상황**이므로 습관적으로 `git add`와 `git status`를 체크하는 습관이 중요하다고 느꼈음.
+
+* Java 배열은 **선언 시 null 값으로 초기화**된다는 점을 이해.
+* 객체 사용 전 반드시 **초기화 여부 확인 습관** 필요.
 
 ---
 
+🛠️ 트러블슈팅 (2) — `IndexOutOfBoundsException` 발생
 
-트러블슈팅 (2)
-```bash
-TJ-BU-703-강사PC@DESKTOP-2Q95R1R MINGW64 /d/hyojung/workspace (master)
-$ git pull  origin master 
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)     
-Unpacking objects: 100% (3/3), 1.03 KiB | 15.00 KiB/s, done.
-From https://github.com/sally03915/fullstack_20250825
- * branch            master     -> FETCH_HEAD
-   031d931..5ac68d8  master     -> origin/master
-Auto-merging day002.md
-CONFLICT (content): Merge conflict in day002.md
+```java
+int[] scores = {100, 90, 80};
+System.out.println(scores[3]); // ❌ 존재하지 않는 인덱스
 ```
+
+#### 1. ❌ 문제점
+
+* 배열 크기(3) 이상 인덱스 접근 시 예외 발생.
+
+#### 2. ✅ 해결방안
+
+```java
+for (int i = 0; i < scores.length; i++) {
+    System.out.println(scores[i]);
+}
+```
+
+#### 3. 💡 느낀점
+
+* 배열은 **고정 크기** 자료구조 → 크기 변경이 필요한 경우 **ArrayList 사용 고려**.
+* `scores.length`를 습관적으로 활용해야 안정적인 코드 작성 가능.
+
 ---
 
-🛠️ 트러블슈팅 (2) — Git Pull 시 Merge Conflict 발생
+🛠️ 트러블슈팅 (3) — Git + Java 프로젝트 충돌
 
 ```bash
 $ git pull origin master
-Auto-merging day002.md
-CONFLICT (content): Merge conflict in day002.md
+Auto-merging Student.java
+CONFLICT (content): Merge conflict in Student.java
 ```
 
-### 1. ❌ 문제점
-- 원격 저장소의 `day002.md` 파일과 로컬 파일 간에 **동일한 부분이 서로 다른 내용으로 수정되어 충돌 발생**.
-- Git은 자동 병합이 불가능한 경우, 해당 파일에 **충돌 지점을 표시하고 수동 해결을 요구**함.
+#### 1. ❌ 문제점
 
-### 2. ✅ 해결방안
-- 충돌 파일(`day002.md`)을 열어 Git이 표시한 충돌 구간(`<<<<<<<`, `=======`, `>>>>>>>`)을 확인함.
-- 두 버전의 내용을 비교하여 **필요한 부분만 남기고 충돌 구간을 직접 수정**함.
-- 수정 후 아래 명령어로 충돌 해결을 완료함:
+* 동일한 클래스(Student.java)를 여러 명이 수정하여 충돌 발생.
 
-```bash
-$ git add day002.md
-$ git commit -m "Merge conflict 해결: day002.md"
+#### 2. ✅ 해결방안
+
+* 충돌 구간(`<<<<<<<`, `=======`, `>>>>>>>`) 확인 후 필요한 코드만 남기고 수정.
+* 이후 `git add` + `git commit`으로 병합 마무리.
+
+#### 3. 💡 느낀점
+
+* Java 프로젝트 협업에서는 **코딩 컨벤션과 역할 분담**이 중요.
+* Git 충돌은 단순히 병합 문제가 아니라, **팀 협업 프로세스 문제**와 직결됨.
+
+>🎆 실습 프로젝트 (1) — BANK 자동실행
+
+|항목|주소|
+| -| - |
+| **동영상**    | [JAVA: BANK 실행 동영상](https://www.youtube.com/shorts/2_Y0fLX-7sI?feature=share)                                                 |
+
+> 추가 기능 
+> 개선 프로젝트
 ```
+🎁Bank 관련 업무
+---
 
-### 3. 💡 느낀점
-- Git 충돌은 협업 중 자주 발생할 수 있는 상황이며, **충돌 지점을 정확히 파악하고 의도를 반영하는 수정이 중요**함.
-- 단순히 충돌을 없애는 것이 아니라, **각 변경사항의 의미를 이해하고 조율하는 과정이 협업의 핵심**임을 체감함.
-- 앞으로는 Pull 전에 `git fetch`와 `git diff`를 활용해 **변경사항을 미리 파악하고 충돌 가능성을 줄이는 습관**을 들여야겠다고 느꼈음.
+```java
+package com.company.java005_ex; 
+import java.util.Scanner;
+
+public class Bank_ver4_sam3_String3_check_f {
+   public static void main(String[] args) {
+      // =====================================================
+      // 🏦 Mini Bank v4 - 실무 확장 아이디어 주석 추가
+      // =====================================================
+      // ✔ 콘셉트: "내 손안의 작은 은행"
+      // - ID/PASS 기반 보안 처리
+      // - CRUD(추가, 조회, 입금, 출금, 삭제) 기본 기능 제공
+      // - 제어문/반복문/switch문을 활용한 실무형 흐름 제어
+      // - 향후 확장 아이디어:
+      //    ▸ 다중 사용자 계정 관리
+      //    ▸ 거래내역 로그 기록 (ArrayList/파일 입출력 확장 가능)
+      //    ▸ 이자율 자동 계산 기능 (잔액 * 금리)
+      //    ▸ 출금 시 수수료 부과 (조건문 활용)
+      //    ▸ 관리자 모드 (총 계정 수 / 은행 총 보유액 조회)
+      //
+      // 🎯 차별 포인트:
+      //    단순 은행 시뮬레이터가 아닌
+      //    "실제 서비스로 확장 가능한 설계 감각"을 보여주는 프로젝트
+      // =====================================================
+      
+      // 변수
+      int num = -1; 
+      String id = "", pass="";  
+      double balance=0;
+      Scanner scanner = new Scanner(System.in);
+      
+      // 입력+처리+출력
+      for(;;){  
+          // ■ 기능 1. 메뉴판
+          // 👉 향후: "관리자 모드" (비밀 번호 입력 시 은행 전체 현황 확인) 추가 가능
+          System.out.print("\n\n== BANK ==" + 
+             "\n1. 추가" + "\n2. 조회" + "\n3. 입금" + "\n4. 출금" + "\n5. 삭제" + 
+             "\n9. 종료 > "     
+          );  
+          num= scanner.nextInt();
+          
+          // ■ 기능 2. 종료 조건
+          if(num==9){ 
+             System.out.println("종료합니다.");  
+             break;   
+          }
+          // ■ 기능 3. 계정 추가
+          else if(num==1){ 
+             System.out.print("ID   입력 > "); id=scanner.next();
+             System.out.print("PASS 입력 > "); pass=scanner.next();
+             System.out.print("금액  입력 > "); balance=scanner.nextDouble();    
+             System.out.println("✨ 신규 계좌 개설 완료!");
+          }
+          // ■ 기능 4. (조회/입금/출금/삭제) 실행 시 계정 인증 필요
+          else if(num==2 || num==3|| num==4|| num==5){ 
+             // 1. 사용자 인증
+             System.out.print("ID   입력 > "); String tempId=scanner.next();
+             System.out.print("PASS 입력 > "); String tempPass=scanner.next();
+             if( !(id.equals(tempId)  && pass.equals(tempPass) )) {
+                System.out.println("🚨 아이디와 비밀번호를 확인해주세요!");
+                continue; // 인증 실패 → 메뉴로 돌아감
+             }
+             
+             // 2. 2,3,4,5 각각에 해당하는 처리
+             switch(num){
+                case 2 : 
+                   System.out.println("\n[계좌 조회]");
+                   System.out.println("ID > "+id + "\n잔액 > "+ balance + " 원"); 
+                   // 👉 아이디어: 최근 거래 내역 출력(향후 ArrayList로 기록)
+                break;
+                case 3 : 
+                   System.out.print("입금할 금액 > ");  
+                   double input = scanner.nextDouble();
+                   balance +=input;  
+                   System.out.println("💰 "+input+" 원 입금 완료! 현재 잔액: "+balance+" 원");
+                   // 👉 아이디어: 특정 금액 이상 입금 시 "우대금리 쿠폰" 지급
+                break;
+                case 4 : 
+                   System.out.print("출금할 금액 > ");  
+                   double output = scanner.nextDouble();
+                   if(output>balance) { 
+                      System.out.println("⚠️ 잔액이 모자랍니다.");  
+                      continue; 
+                   }
+                   balance -=output;  
+                   System.out.println("💸 "+output+" 원 출금 완료! 현재 잔액: "+balance+" 원"); 
+                   // 👉 아이디어: 출금 시 수수료(예: 500원) 자동 차감 기능 확장 가능
+                break;
+                case 5 : 
+                   System.out.println("정말 삭제하시겠습니까? (y/n)");  
+                   String answer = scanner.next();  
+                   if(!answer.toLowerCase().equals("y")) {
+                      System.out.println("삭제를 취소했습니다."); 
+                      continue;
+                   }
+                   id=pass=""; balance=0;
+                   System.out.println("🔥 계정 삭제 완료!");
+                   // 👉 아이디어: 실제라면 DB에서도 데이터 영구 삭제 or 복구 기능 고려
+                break;
+             }
+         } // end else if
+           
+      }// end for 
+   }// end main
+}//end class
+```
 
 ---
 
+✅ 이렇게 정리하면:
 
-트러블슈팅 (3)
-```bash
-TJ-BU-703-강사PC@DESKTOP-2Q95R1R MINGW64 /d/hyojung/workspace (master|MERGING) $ git pull origin master error: You have not concluded your merge (MERGE_HEAD exists). hint: Please, commit your changes before merging. fatal: Exiting because of unfinished merge.
+* **기본 제어문 활용**은 그대로 유지
+* **확장 아이디어**(다중계정, 거래내역, 수수료, 이자율, 관리자 모드 등)를 주석으로 녹여 **실무 감각** 어필
+* **스토리텔링**(작은 은행 서비스 → 확장 가능한 미니 뱅킹 시스템) 제공
+* 면접관이 봤을 때 “와, 그냥 코드가 아니라 실무 확장성을 생각하는 사람이네”라는 인상을 줄 수 있음
 ```
-<br/>
-
-
----
-
-🛠️ 트러블슈팅 (3) — 병합 중 `git pull` 실패
-
-```bash
-$ git pull origin master
-error: You have not concluded your merge (MERGE_HEAD exists).
-hint: Please, commit your changes before merging.
-fatal: Exiting because of unfinished merge.
-```
-
-### 1. ❌ 문제점
-- 이전에 `git pull` 또는 `git merge` 명령어를 실행한 후 **충돌을 해결하지 않고 병합을 완료하지 않은 상태**에서 다시 `git pull`을 시도함.
-- Git은 병합이 완료되지 않은 상태(`MERGE_HEAD` 존재)를 감지하고, **새로운 병합 작업을 시작할 수 없도록 차단**함.
-
-### 2. ✅ 해결방안
-- 먼저 충돌이 발생한 파일을 확인하고 수동으로 수정함.
-- 수정 후 아래 명령어로 병합을 완료함:
-
-```bash
-$ git add <수정된 파일>
-$ git commit -m "Merge conflict 해결 및 병합 완료"
-```
-
-- 이후 다시 `git pull`을 실행하면 정상적으로 작동함.
-
-### 3. 💡 느낀점
-- Git은 병합 상태를 명확히 관리하며, **중간에 병합을 완료하지 않으면 이후 작업이 막히는 구조**임을 체감함.
-- 충돌 해결 후에는 반드시 `git add`와 `git commit`을 통해 병합을 마무리해야 하며, **작업 흐름을 정확히 이해하고 관리하는 습관이 중요**함.
-- 앞으로는 병합 중 상태를 확인할 때 `git status`를 활용하고, 병합 완료 여부를 항상 체크하는 습관을 들여야겠다고 느꼈음.
-
 ---
 
 ## 📌 참고문헌
-- [Git 공식 문서](https://git-scm.com/doc)  
-- [Markdown 가이드](https://www.markdownguide.org/basic-syntax/)  
-- [VS Code 공식 사이트](https://code.visualstudio.com/)  
-- [AI 프롬프트 작성 팁](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/prompt-engineering)
+
+* [Java 공식 문서](https://docs.oracle.com/javase/8/docs/)
+* [Effective Java (Joshua Bloch)](https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/)
+* [Git 공식 문서](https://git-scm.com/doc)
+
+---
+
+

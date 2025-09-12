@@ -24,6 +24,7 @@ public class ArrayEx008 {
 		System.out.println("====================================================");
 		System.out.print("이름\t국어\t영어\t수학\t평균\t합격여부\t장학생\n");
 		System.out.println("====================================================");
+		
 		for(int i=0; i<name.length;i++) {
 		System.out.printf("%-5s\t%-5d\t%-5d\t%-5d\t%-5d\t%-5s\t%-5s\n",
 				name[i],kor[i],eng[i],mat[i],aver[i],pass[i],jang[i]);
