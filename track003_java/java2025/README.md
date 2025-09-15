@@ -141,6 +141,14 @@ CONFLICT (content): Merge conflict in Student.java
 | -| - |
 | **동영상**    | [JAVA: BANK 실행 동영상](https://www.youtube.com/shorts/2_Y0fLX-7sI?feature=share)                                                 |
 
+>🎆 실습 프로젝트 (2) — BANK 응용 고객 정보관리 실행
+
+|항목|주소|
+| -| - |
+| **동영상**    | [JAVA: 고객정보 관리](https://youtube.com/shorts/FLiBGtLUTfI?feature=share)                                                 |
+
+
+
 > 추가 기능 
 > 개선 프로젝트
 ```
@@ -256,12 +264,6 @@ public class Bank_ver4_sam3_String3_check_f {
 
 ---
 
-✅ 이렇게 정리하면:
-
-* **기본 제어문 활용**은 그대로 유지
-* **확장 아이디어**(다중계정, 거래내역, 수수료, 이자율, 관리자 모드 등)를 주석으로 녹여 **실무 감각** 어필
-* **스토리텔링**(작은 은행 서비스 → 확장 가능한 미니 뱅킹 시스템) 제공
-* 면접관이 봤을 때 “와, 그냥 코드가 아니라 실무 확장성을 생각하는 사람이네”라는 인상을 줄 수 있음
 ```
 ---
 

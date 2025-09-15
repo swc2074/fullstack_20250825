@@ -40,6 +40,16 @@ public class Bank002_Array {
 			}
 			else if (num == 2 || num == 3|| num == 4 || num == 5) {
 				/* 2-1. 인증정보 */
+			
+			    int find = -1;
+			    System.out.print("ID   입력 > ");
+				String tempId = scanner.next();
+				System.out.print("PASS 입력 > ");
+				String tempPass = scanner.next();
+				if (!(id.equals(tempId) && pass.equals(tempPass))) {
+					System.out.println("아이디와 비밀번호를 확인해주세요!");
+					continue; // 아래꺼 진행하지마!
+				}
 				//1. 사용자에게 아이디 입력받기
 				//2. 사용장에게 비밀번호 입력받기
 				//3. ver -0 int find =-1; 없는 번호
