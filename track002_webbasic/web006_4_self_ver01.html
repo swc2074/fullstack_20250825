@@ -21,7 +21,12 @@
 
     /* Q3. h3태그에 밑줄 */
     .info h3{ text-decoration: underline; font-size:2.2em;}
-
+   .hidden{ position: absolute; left:-9999px; 
+             width: 1px; height:1px; overflow:hidden;
+             clip: rect(0,0,0,0);   /* 요소를 잘라서 시각젖ㄱ으로 완전히 숨김 - 구형브라우저 호환 */
+             border:0;
+             white-space: nowrap; /*줄바꿈방지 - 텍스트 가 한줄로*/
+            }
 
 
 
@@ -29,7 +34,10 @@
 </head>
 <body>
     <!---  header -->
-    <header class="header">
+    <header  class="header">
+    <h1 class="hidden">홍길동포트폴리오</h1>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+        <h2  class="hidden">주메뉴</h2>
         <nav class="navbar navbar-expand-sm navbar-dark bg-success">
             <div class="container-fluid">
                 <a class="navbar-brand me-auto" href="javascript:void(0)">포토폴리오</a>
@@ -149,34 +157,73 @@
 
 
     <!--portfolio-->
-    <section class="portfolio"></section>
+    <section class="portfolio">
+            <h3 class="text-center"> Portfolio</h3>
 
-
-    <section class="contact m-5"></section>
-        <div class="container">
-            <h3 class="text-center">Contact Me</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <iframe class="w-100 no-border" 
+                          src="https://studio.youtube.com/video/FLiBGtLUTfI/edit" title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                           referrerpolicy="strict-origin-when-cross-origin" 
+                           allowfullscreen></iframe>
+                        <p class="text-center m-3"><a href=" # " class = "btn btn-success">포트로리오 더보기</a> </p>
+                    </div><!--end col-sm-4-->
+                    <div class="col-sm-4">
+                        <h4> spring boot + jpa + react portfolio</h4>
                         
-                    <form action="/action_page.php">
-                        <div class="mb-3 mt-3">
-                            <label for="title" class="form-label">제목:</label>
-                            <input type="text" class="form-control" id="title" placeholder="제목을 적어주세요" name="title">
+                        <ul>
+                                <li><strong>Spring Boot</strong>를 기반으로 백엔드 서버를 구축하여 RESTful API를 제공합니다.</li>
+                                <li><strong>JPA</strong>를 활용해 데이터베이스와 객체 간의 매핑을 처리하며, CRUD 기능을 효율적으로 구현했습니다.</li>
+                                <li><strong>React</strong>를 사용해 사용자 친화적인 프론트엔드 UI를 구성하고, Axios를 통해 백엔드와 비동기 통신을 수행합니다.</li>
+                                <li>회원가입, 로그인, 게시글 작성 및 조회 등 핵심 기능을 포함한 <strong>풀스택 웹 애플리케이션</strong>입니다.</li>
+                                
+                        </ul>
+                    </div><!--end col-sm-4-->
+                    <div class="col-sm-4">
+                        <h4> 기술스택 </h4>
+                            <ul>
+                                <li>Spring Boot 2.7.14 </li>
+                                <li>Spring Security 5.7.x </li>
+                                <li>Spring Data JPA 2.7.x </li>
+                                <li>Hibernate 5.6.x </li>
+                                <li>MySQL 8.0</li>
+                                <li>React 18.x</li>
+                                
+                            </ul>
                         </div>
-                            <div class="mb-3">
-                                    <label for="comment">Comments:</label>
-                                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
-                            </div>                            
+                    </div>
+            </div>
+             
+            
+</section>
+<section  class="contact m-5">
+    <div class="container">
+        <h3 class="text-center">Contact Me</h3>
+        <p class="text-center">  열정적인 개발자 홍길동에 문의 주세요! </p>
         
-                            <div class=" mb-3 text-end">
-                                <button type="submit" class="btn btn-primary">메일 보내기</button>
-                            </div>
-                    </form>
-                           
-        </div>
-        <footer class="footer text-center bg-secondary text-white p-5">
-            &copy; copyrights company 2025 all reseved
-        </footer>
+        <form action="/action_page.php">
+            <div class="mb-3 mt-3">
+                <label for="title" class="form-label">제목:</label>
+                <input type="text" class="form-control" id="title" 
+                       placeholder="제목을 적어주세요!" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="comment">Comments:</label>
+                <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>            
+            </div>
+            <div class="mb-3 text-end">
+                <button type="submit" class="btn btn-success">메일보내기</button>
+            </div>
+        </form> 
+    </div><!--end container-->
+  </section>
+       
+        <!-- footer -->
+            <footer  class="footer  text-center  bg-secondary  text-white p-5">
+              &copy;  copyrights  company  2025 all. rights reserved 
+             </footer>
 
-
-  <!-- 여기에 콘텐츠를 추가하세요 -->
 </body>
 </html>
