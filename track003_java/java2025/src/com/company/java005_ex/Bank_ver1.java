@@ -113,7 +113,7 @@ public class Bank_ver1 {
 				String temid = null, tempass = null; 
 				char Del = ' ';
 				System.out.println("아이디:"); temid = scanner.next();
-				System.out.println("비밀번호:"); tempass2 = scanner.next();
+				System.out.println("비밀번호:"); tempass = scanner.next();
 				System.out.println(" 삭제하시겠습니까?"); 
 				Del = scanner.next().charAt(0);
 				
