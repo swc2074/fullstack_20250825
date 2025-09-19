@@ -12,7 +12,7 @@ public class Test20250919_8 {
 	public static void main(String[] args) {
 		int[] arr = { 1, 2, 3 };
 		System.out.println(print(arr[1]));
-		// ==>1. 예상되는 결과: 출력 12 < arr[1]의 값 2와 10이 합한 값
+		// ==>1. 예상되는 결과: 출력 2  arr[1]의 주소에 있는 값 2
 
 		print(arr);
 		System.out.println(Arrays.toString(arr));
