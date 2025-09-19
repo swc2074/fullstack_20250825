@@ -213,7 +213,7 @@
                         });
                     })();
                     ////////////////////////////////////////////////////////////////////////////
-                    function sendEmail( e) {
+                    function sendEmail(e) {
                         e.preventDefault(); // 무조건 전송기능 막기
                         var templateParams = {
                             name: document.getElementById("name").value,
@@ -237,17 +237,17 @@
 
                     </script>
 
-        <form  onsubmit = " sendEmail (event) " action="/action_page.php">
+        <form  onsubmit = " sendEmail (event) " >
             <div class="mb-3 mt-3">
                 <label for="name" class="form-label">name:</label>
                 <input type="text" class="form-control" id="name" 
-                       placeholder="이름을 적어주세요!" name="title">
+                       placeholder="이름을 적어주세요!" name="name">
             </div>
 
             <div class="mb-3 mt-3">
                 <label for="email" class="form-label">email:</label>
                 <input type="text" class="form-control" id="email" 
-                       placeholder="email을 적어주세요!" name="title">
+                       placeholder="email을 적어주세요!" name="email">
             </div>
 
             <div class="mb-3 mt-3">
@@ -260,9 +260,9 @@
                 <label for="message">Comments:</label>
                 <textarea class="form-control" rows="5" id="message" name="comment"></textarea>            
             </div>
-            <div class="mb-3 text-end">
+            <div class="mb-3 text-end"></div>
                 <button type="submit" class="btn btn-success">메일보내기</button>
-            </div>
+            
         </form> 
     </div><!--end container-->
   </section>
