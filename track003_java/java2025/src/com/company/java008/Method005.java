@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Method005 {
    
    public static void call (int a){System.out.println(a+">"+(a+=10));}
+   
    ///////////////////////////////////////
    public static void main(String[]args) {
       int [] arr = {10,20,30};
