@@ -1,5 +1,6 @@
 package com.company.java005_ex;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ad_Bank_Array_ver01 {
@@ -7,12 +8,20 @@ public class Ad_Bank_Array_ver01 {
         // 변수
         int num = -1;
         String name = "", 
+        		//String [] name = new String [3]; // 고객이름 
         phone = "", 
+        		//String [] phone = new String [3]; // 고객 전화 번호
         interest = "";
+        		//String [] interest = new String [3]; // 고객 관심 분야
+        
         Scanner scanner = new Scanner(System.in);
 
         // 입력 + 처리 + 출력
-        for (;;) {
+        while  ( num !=9){
+        	
+        	System.out.println(Arrays.toString(name));
+        	System.out.println(Arrays.toString(phone));
+        	System.out.println(Arrays.toString(interest));
             // 메뉴판
             System.out.print("\n===== 📢 광고 & 고객 연락처 관리 =====\n"
                     + "🎁1. 고객 정보 추가\n"
@@ -25,8 +34,13 @@ public class Ad_Bank_Array_ver01 {
             scanner.nextLine(); // 버퍼 정리
 
             // 종료
-            if (num == 9) {
-                System.out.println("프로그램을 종료합니다. 감사합니다!");
+            if (num == 1) {
+               
+            	int find=-1;
+            	for(int i=0; i<name.length; i++) {if(name[i] == null ) { find = i; break;} }
+            	if(find == -1) { System.out.println(" 회원")
+            	
+            	System.out.println("프로그램을 종료합니다. 감사합니다!");
                 break;
             }
 
