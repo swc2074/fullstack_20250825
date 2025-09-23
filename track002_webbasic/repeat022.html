@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    
+    <div class="container card">
+        <h3 class = "card-header"> ex 001</h3>
+       <input type = "button" value = "addEventEx-1~5 Like"
+            title = "버튼 5" id = "addEventEx" class = "btn btn-success"/>
+       <script>
+           window.addEventListener("load",function(){
+                document.getElementById("addEventEx").onclick = function(){
+                let like = prompt( "당신이 좋아하는 숫자는?", "1~5");
+                alert("당신이 좋아하는 " + like + "입니다. ");
+                };
+            });
+        </script>
+    </div>
+</body>
+</html>
