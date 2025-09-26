@@ -165,7 +165,11 @@ CONFLICT (content): Merge conflict in Student.java
 |항목|주소|
 | -| - |
 | **동영상**    | [JAVA: 고객정보 관리](https://youtube.com/shorts/FLiBGtLUTfI?feature=share)                                                 |
+>🎆 실습 프로젝트 (3) — BANK Array 응용 고객 정보관리 실행
 
+|항목|주소|
+| -| - |
+| **동영상**    | [JAVA: Array 적용 고객정보 관리](https://youtu.be/5e8G03Gjxk0)                                                 |
 
 
 > 추가 기능 
