@@ -69,7 +69,6 @@ class MobileNote7 extends MobileNote{
     	System.out.println("Note7 객체 기능 (overriding)\n"
     			           + "iris =" + this.iris + "\n"
     			           + "face =" + this.face);
-		
 	}
 	
 
