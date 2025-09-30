@@ -1,54 +1,45 @@
 package com.company.java012_ex; 
-//Q1. 상속도를 그리시오. 
-     //                                     생성자     객체
+//Q1. 상속도 그리기 
+     //                                        생성자     객체
 /* 
-              Object                       3           4
+              Object                            3           4
                 ↑									
-* 		     TestA4  {a = 10, -----}       2           5
+* 		     Papa  {money = 10000/ sing - GOD}       2           5
 * 		        ↑
-             TestB4  {b = 20, @toString}   1		   6
+             Son  {money = 1500/ @sing - 빅뱅}         1		    6
 	
 */
-class TestA4  extends Object{  
-	   int a=10;
-	   @Override public String toString() { return "TestA4 [a=" + a + "]"; }
-	}
-	class TestB4  extends TestA4{  
-	   int b=20;
-	   @Override public String toString() { return "TestB4 [b=" + b + "]"; }
-	}
-	/////////////////////////////////////////////////
-	public class PolyEx004 {
-		   public static void main(String[] args) {
-		      TestA4  ta = new TestA4();
-		      //Q2. TestA4  ta 사용할수 있는범위는?  { a=10 / toString}
-		      //Q3. new TestA4() 는  heap area 에서 호출되는 생성자의 순서와 객체가 만들어지는 순서는?
-		      // A: 생성자 호출  TestA4 -> Object () / 객체 4->5 -> Object -> TestA4
-		      //  ta {a=10 /toString} = 1000번지 {a=10 / toString} --{Object} 
-		      TestB4  tb = new TestB4();  
-		      //Q4. TestB4  tb 사용할수 있는범위는? A : {b=20 / @toString} -{a=10 / -----------}
-		      		      
-		      //Q5. new TestB4() 는  heap area 에서 호출되는 생성자의 순서와 객체가 만들어지는 순서는?
-		      // A: 생성자 : 1 2 3 TestB4() -> TestA4() -> Object() / 객체 : 4 -> 5 -> 6
-		      // tb {b=20/@toString}-{a=10 / -----} = 2000번지 {b=20 / @toString} -{a=10 /------}
-		      
-		      //부모 = 자식 / 업캐스팅 / 타입캐스팅       
-		      
-		      ta = new TestB4();
-		      //Q6. ta가 사용할수 있는 보장하는 변수와 메서드는? A: {a=10 / toString}
-		      //Q7.ta = new TestB4(); 에서 new TestB4() 에서 사용할수 있는 범위는? 
-		      // ta{a=10 /toString} = 3000번지 {b=20 / [@toString} -{a=10] /--------}
-		      //
-		      tb         = (TestB4) ta;   
-		      //Q8. tb         = (TestB4) ta;   에서 tb가 사용할수 있는 범위는? A: {b=20 / @toString} - {a=10 /-----------}
-		      //Q9. 컴파일러시  tb         = (TestB4) ta;  오류가 안나는 이유는?
-		      // A : tb{b=20 /@toString} - {a=10 /-----------} = 3000번지 {b=20 / [@toString} - { a=10 ] / ------}
-		      
-		      System.out.println(tb);  //Q10. 출력내용과 그이유는?TestB4
-		      System.out.println(((TestB4)ta).b);//Q11. 출력내용? 20
-		      System.out.println(tb.a);//Q12. 출력내용? 10
-		      
-		   }
-		}
+
+//Q2. 각클래스에서 사용할수있는 멤버변수/멤버메서드
+class Papa extends Object{ 
+	int money = 10000;  // 멤버 변수
+	public Papa() { super(); } //멤버 메서드
+	public void sing() {  System.out.println("GOD-거짓말");  } // 멤버 메서드
+}// end class
+
+
+class Son extends Papa{ 
+	int money = 1500; // 멤버 변수
+	public Son() { super(); } //멤버 메서드
+	@Override public void sing() {  System.out.println("빅뱅-거짓말"); } //멤버 메서드
+} // end class
+
+
+public class PolyEx004 {
+public static void main(String[] args) { 
+   Papa mypapa = new Son();    // 부모 = 자식 ( 업캐스팅/ 타입캐스팅 x)
+   // Q3. Papa mypapa 의미?
+         // ==> A: Papa 자료형 쓸수 있어! {int money = 10000 /sing()} - {} 
+   // Q4. 인스턴스화한 실제 메모리 빌려온그림
+         // ==> {int money = 1500/  [@sing()-빅뱅} - { int money =1000] /----}
+   System.out.println(mypapa.money); // Q5.  출력   10000
+     
+   mypapa.sing();  //Q6. 출력 빅뱅 - 거짓말
+    // ★ Q7. mypapa.money 를 이용해서  1500 출력되게 해주세요.
+    System.out.println(((Son)mypapa).money);
+    
+}
+}
+
 
 /////////////////////////////////////////////////
