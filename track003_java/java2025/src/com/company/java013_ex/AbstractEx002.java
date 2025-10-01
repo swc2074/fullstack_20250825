@@ -95,7 +95,6 @@ public class AbstractEx002 {
 			System.out.println();
 		}
         
-		
         
     }
 }
