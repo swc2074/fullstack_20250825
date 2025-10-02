@@ -17,6 +17,7 @@ public class ListEx002 {
 
 		System.out.println(numbers);
 
+		
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("숫자를 입력하시오 > ");
