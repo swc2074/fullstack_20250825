@@ -175,6 +175,38 @@ Q2. 팀원 - [깃허브] test2.md 수정
 git restore 파일명 #마지막으로 저장상태로 돌아감.
 git restore --source=HEAD~1 파일명  #HEAD~ 1 1단계  #HEAD~2 2단계
 ``` 
+##### ■4. fetch  vs  pull
+- fetch : 데이터 가져오기 ( 충돌이 날지 먼저 확인 ) 
+- pull  : 데이터 가져오고 바로 합치기 (위험의 가능성)
+
+```bash
+#1. [ github ]  test.md  - 새로운 사항 업데이트
+#2. [local] 작업 - 새로운 변경사항있는지 확인
+   git fetch  origin
+#3. 가져온 변경사항 확인
+   git log     a1dc3bc..36ff096
+   git log     HEAD..orgin/master
+   git diff    HEAD  origin/master  -- 변경된 내용파일
+   git diff -- HEAD  origin/master 
+#4. 확인후 합치기 
+   git merge orgin/master   
+..............................
+Q1. 팀장 - [깃허브] test2.md  
+    ★ 자격증 공부
+    - day001 이론완료 : 이름붙여주기
+    
+Q2. 팀원 - [깃허브] test2.md 수정 
+    -  git pull 이 아니라 get fetch 데이터 가져오기  
+##### ■4. restore  vs  checkout
+- restore  : 파일을 예전 상태로 되돌리는 기능  (최근상태로 되돌리기) , commit 안했을때사용가능
+- checkout : 브랜치 바꾸거나 파일 되돌리기
+
+``` bash
+git restore  파일명   # 마지막으로 저장한상태로 돌아감.
+git restore   --source=HEAD~1  파일명   # HEAD~1  1단계  , HEAD~2  2단계
+```
+
+### restore 1단계
 
 # ■ JAVA
 # ■ Java 복습문제
