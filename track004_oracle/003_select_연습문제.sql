@@ -26,8 +26,8 @@ select empno,ename,job,sal,
            when 'MANAGER' then sal*1.1
            when 'SALESMAN' then SAL*1.05
            when 'ANALYST' then sal*1.0
-           else          sal*1.03
-       end )  UPSAL
+           else          sal*1.03 
+       end ) as UPSAL
        
 from emp;
 
@@ -36,8 +36,12 @@ select empno,ename,comm,
         case 
              when comm is null then '해당사항 없음'
              when comm = 0    then '수당 없음'
-             when comm >=0 then '수당:' || COMM
-        end
+             when comm >0 then '수당:' || COMM
+        end comm_text
 from emp;
 
 
+
+--Q019.
+select round(1234.5678),round(1234.5678,0),round(1234.5678,2)
+from dual;

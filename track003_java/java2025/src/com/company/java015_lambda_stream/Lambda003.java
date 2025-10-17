@@ -77,6 +77,9 @@ public class Lambda003 {
 		//Ex2 ex2 = s -> System.out.println(s);
 		Ex2 ex2 = System.out::println;
 		ex2.print("lambda:)");
+		
+		
+		
 	}
 
 	
