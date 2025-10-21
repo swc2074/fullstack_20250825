@@ -29,7 +29,7 @@ public class Stream003 {
 		
 		 System.out.println("\n\nEx3");
 		List<String> names = Arrays.asList("김수지","아나영","김나영","유재석","강호동");
-		System.out.println(names.get(0).startsWith("김"));// 문자열에서 startsWith("문자") 시작하는
+		System.out.println(names.get(0).startsWith("김"));// 문자열에서 startWith("문자") 시작하는
 		//step1) 스트림만들기
 		 names.stream()
 		      .filter(name ->name.startsWith("김"))
