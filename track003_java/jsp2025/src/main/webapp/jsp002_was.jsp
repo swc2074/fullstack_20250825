@@ -1,0 +1,33 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<div class = "container bg-primary text-white rounded">
+   	<h3>  WAS(web Application server) </h3>
+   	<P> 동적콘텐츠 - jsp,sevlet/db 연동 </P>
+   	<p> Tomcat</p>
+   	<p> 2025-10-24 - 17:49 </p>
+   	<%@page import="java.util.Calendar"%>
+   	<%
+   		Calendar today = Calendar.getInstance(); // ctrl + space
+   		String now = "" + today.get(1) + (today.get(2)+1) + today.get(5);
+   		out.println(now);
+   	%>
+   </div>
+
+</body>
+</html>
+
+<!-- jsp002_was.jsp -->
