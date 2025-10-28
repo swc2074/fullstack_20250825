@@ -68,6 +68,22 @@ update dept_temp set LOC = 'DALLAS'  where deptno = 20 and dname = 'RESEARCH';
 SELECT * FROM DEPT_TEMP;
 
 
+-- #3. delete
+--delete from 테이블명  where 조건
+
+delete from dept_temp;  -- 전체 데이터 삭제 
+delete from dept_temp where deptno = 10;
+delete from dept_temp where deptno >= 30;
+
+
+
+-- #3. 
+commit;
+select * from dept_temp;
+select * from dept; 
+
+insert into dept_temp (deptno, dname,loc)
+                     select deptno,dname,loc from dept;
 
 10   ACCOUNTING   NEW YORK
 20   RESEARCH   DALLAS
@@ -81,6 +97,52 @@ SELECT * FROM DEPT_TEMP;
 80   FRONT   
 90   BACK   INCHEON
 99   MOBILE   
+
+
+------------------------------------------------------------------------------------------------
+-- 2. ddl 정의어 create(만들기) alter (테이블 수정)  drop(삭제: 복구안됨.) → CAD
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+-- #1. create table 테이블명(
+필드명1 자료형 옵션,
+필드명2 자료형 옵션2,
+필드명3, 자료형 옵션3
+)
+------------------------------------------------
+필드명 - 영문소문자
+자료형 - 숫자는 number, 문자열 varchar2 (갯수), 날짜 date
+옵션 - not null 필수입력, 기본값 primary key
+
+create table dept_ddl(
+        deptno number(2) primary key,
+        dname  varchar(50) not null, 
+        loc    varchar(50) 
+);
+
+desc dept_ddl;
+--------------------------------------
+alter table 테이블명   add        필드명  자료형
+                      drop      column 필드명 
+                      modify    필드명  자료형
+--------------------------------------
+
+-- 컬럼추가
+alter table dept_ddl  add admin varchar(50);
+-- 컬럼 수정
+alter table dept_ddl modify admin varchar(100) not null;
+
+--컬럼 삭제
+alter table dept_ddl drop column amdin;
+
+
+----------
+drop table  테이블 명
+----------
+rollback;
+desc dept_ddl;
+
+
 
 
 
