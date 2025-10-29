@@ -66,6 +66,7 @@ select * from appuser;
 delete from appuser where app_user_id !=24910;
 
 
+select * from appuser;
 
 
 
