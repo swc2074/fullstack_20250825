@@ -70,3 +70,60 @@ select * from appuser;
 
 
 
+
+
+create table post(
+      ID   NUMBER not  null,
+      APP_USER_ID  NUMBER not null ,
+      TITLE   varchar2(200) not null,
+      CONTENT  CLOB not null,
+      PASS varchar2(100),
+      CREATED_AT date default sysdate,
+      HIT number default 0,
+      primary key(id)
+      );
+      
+      
+      select * from post;
+create sequence post_seq;
+
+create table PostDto(
+      ID   NUMBER not  null,
+      APP_USER_ID  NUMBER not null ,
+      TITLE   varchar2(200) not null,
+      CONTENT  CLOB not null,
+      PASS varchar2(100),
+      CREATED_AT date default sysdate,
+      HIT number default 0,
+      primary key(id)
+      );
+
+
+-- 1. [글쓰기]글쓰기 sql:
+	insert into post(id,               app_user_id, title, content, pass) 
+	          values(post_seq.nextval,       ?    ,   ?  ,     ?  , ?   );
+              
+          insert into post(id,               app_user_id, title, content, pass) 
+          values(post_seq.nextval,  1   ,   'king'  ,     'music'  , '11'  );
+          
+           insert into post(id,               app_user_id, title, content, pass) 
+          values(post_seq.nextval,  1   ,   'banana'  ,     'zoo'  , '11'  );
+              
+              select * from post;
+
+-- 2. [전제보기]전체글가져오기 , appuser테이블에서 email 도 같이 가져오기 sql :
+
+	select       p.*  , u.email
+	from   post p join appuser u on p.app_user_id=u.app_user_id;
+	
+
+-- 3. [상세보기]글번호 해당하는 글가져오기 sql :
+	select * from post where id=1;
+	update post set hit=hit+1 where id=1;
+
+-- 4. 글수정하기 sql:
+	update post set title= 'king2', content='music2' where id=1 and pass='11';
+
+-- 5. 글번호 해당하는 삭제
+	delete from post where id=1 and pass='11';
+
