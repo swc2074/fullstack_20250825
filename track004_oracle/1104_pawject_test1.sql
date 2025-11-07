@@ -11,6 +11,8 @@ insert into disease(disno,disname,disex,kindpet,infval,mannote) values(disno_seq
 select * from disease;
 select * from disease where disno=3;
 
+select * from post;
+
 update disease set disname= '비대성심근증(HCM)',disex='심장근육이 두꺼워져 심장 기능저하. 고양이 최다 발병 심장병.',kindpet='고양이,메인쿤, 랙돌, 스핑크스', infval = '메인쿤 발생률: 20%∼30% 유전적 소인 높음.', mannote = '벽두께: 좌심실 후벽 및 중격의 두께가 6 mm 이상일 때 진단(품종별 기준 다름).'  where disno = 3;
 
 delete from disease where disno = 21;
