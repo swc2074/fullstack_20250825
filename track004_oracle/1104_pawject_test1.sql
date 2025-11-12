@@ -17,3 +17,180 @@ update disease set disname= '비대성심근증(HCM)',disex='심장근육이 두
 
 delete from disease where disno = 21;
 commit;
+
+
+
+create table userinfo(
+    no number not null,
+    email varchar2(100)  not null,
+    age number     
+);
+
+create table userinfo1(
+    no number not null,
+    email varchar2(100)  not null,
+    age number     
+);
+
+commit;
+
+desc unserinfo;
+
+create table userinfo(
+no number not null primary key,
+email varchar2(100) not null unique,
+age number
+);
+
+desc userinfo;
+create sequence userinfo_seq;
+          
+insert into userinfo(no, email, age) 
+          values(post_seq.nextval,  'nn@naver.com'   , '20'  );  
+          
+insert into userinfo(no, email, age) 
+          values(post_seq.nextval,  '444@naver.com'   , '40'  );
+insert into userinfo(no, email, age) 
+          values(post_seq.nextval,  '555@naver.com'   , '30'  );
+insert into userinfo(no, email, age) 
+          values(post_seq.nextval,  '222@naver.com'   , '10'  );
+          
+insert into userinfo(no, email, age) 
+          values(post_seq.nextval,  '222@naver.com'   , '10'  );  
+          
+select * from userinfo;  
+select * from userinfo where no = 1;
+update userinfo set age=40 where no=1;
+update userinfo set age=40, email = 'ddd' where no=1;
+delete from userinfo where no=1;
+
+          
+          
+          
+select * from post;
+
+select       p.*  , u.email
+	from   post p join appuser u on p.app_user_id=u.app_user_id;
+	
+select * from post where id=1;
+update post set hit=hit+1 where id=1;
+update post set title= 'king2', content='music2' where id=1 and pass='11';
+
+delete from post where id=1 and pass='11';
+
+
+
+-- ex004 
+create table milk(
+mno number not null primary key,
+mname varchar2(100) not null unique,
+mnum number not null,
+mtotal number
+);
+
+select * from milk;
+create SEQUENCE milk_seq;
+desc milk;
+       
+insert into milk(mno,mname,mnum,mtotal) 
+          values(milk_seq.nextval,  'white'   , '1', '1000'  );  
+          
+        
+            
+select * from milk where no = 1;
+update milk set nname='name3' where mno=1;
+update milk set mname='banana', mnum=1, mtotal=2000 where mno=2;
+delete from milk where mno=1;
+delete from milk;
+
+alter table milk rename column nname to mname;
+alter table milk rename column nnum to mnum;
+
+commit;
+de
+-----------------------------
+
+
+   연습문제) 프로젝트 새로만들기~!
+      Q1. spring 프로젝트 spring005 만드시오.
+      Q2. datasource설정하는 
+         root-context.xml 과  application.properties를 작성하시오.
+      Q3. ApplicationContext, DataSource를 테스트하시오.
+      Q4. mybatis를   
+         root-context.xml 에 설정하고 mybatis 테스트를 하시오.
+      Q5. table 작성 - sql 기본구문 5개 작성
+      Q6. dto 작성
+      Q7. dao 작성
+      Q8. dao 테스트
+
+      SQL> desc sboard1;
+      Name                                      Null?    Type
+      ----------------------------------------- -------- ----------------------------
+      ID                                        NOT NULL NUMBER
+      APP_USER_ID                               NOT NULL NUMBER
+      BTITLE                                    NOT NULL VARCHAR2(1000)
+      BCONTENT                                  NOT NULL CLOB
+      BPASS                                     NOT NULL VARCHAR2(255)
+      BFILE                                              VARCHAR2(255)
+      BHIT                                               NUMBER(10)  default 0
+      BIP                                       NOT NULL VARCHAR2(255)
+      CREATE_AT                                          TIMESTAMP(6) default sysdate
+
+----------------------------------
+alter table sboard1 rename column CREATE_AT to "createdAt";
+create table sboard1(
+
+      ID              NUMBER  NOT NULL  primary key
+      ,APP_USER_ID     NUMBER NOT NULL
+      ,BTITLE          VARCHAR2(1000) NOT NULL
+      ,BCONTENT        CLOB  NOT NULL
+      ,BPASS           VARCHAR2(255) NOT NULL
+      ,BFILE           VARCHAR2(255) default 'no.png'
+      ,BHIT            NUMBER(10)  default 0
+      ,BIP             VARCHAR2(255) NOT NULL
+      ,CREATED_AT       TIMESTAMP(6) default systimestamp
+
+);
+
+delete  from sboard1;
+drop table sboard1;
+
+select * from sboard1;
+create sequence sboard1_seq;
+
+--insert:
+         insert into sboard1(ID , APP_USER_ID, BTITLE, BCONTENT, BPASS, BIP)
+         values (sboard1_seq.nextval , 21, 'title', 'content', '1111', '127.0,0,1');
+         
+         insert into sboard1(ID , APP_USER_ID, BTITLE, BCONTENT, BPASS, BIP)
+         values (sboard1_seq.nextval , 22, 'title22', 'content22', '2222', '127.0,0,1');
+         
+         insert into sboard1(ID , APP_USER_ID, BTITLE, BCONTENT, BPASS, BIP)
+         values (sboard1_seq.nextval , 23, 'title33', 'content33', '3333', '127.0,0,1');
+         
+         insert into sboard1(ID , APP_USER_ID, BTITLE, BCONTENT, BPASS, BIP)
+         values (sboard1_seq.nextval , 24, 'title44', 'content44', '4444', '127.0,0,1');
+         
+          insert into sboard1(ID , APP_USER_ID, BTITLE, BCONTENT, BPASS, BIP)
+         values (sboard1_seq.nextval , 25, 'title44', 'content55', '5555', '127.0,0,1');
+         
+--selectAll
+         select * from sboard1  order by id desc;
+
+--select
+        select * from sboard1 where id=4;
+--update
+        update sboard1
+        set BTITLE='new14', BCONTENT='content1'
+        where id=4 and BPASS='4444';
+
+--delete
+        delete from sboard1 where id=4 and BPASS='4444';
+
+select * from sboard1;
+
+commit;
+
+
+
+
