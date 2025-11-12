@@ -14,8 +14,6 @@ import com.thejoa703.dto.Sboard1Dto;
 @Service // component-scan ★★★★★★★★★★★★★★★★
 public class Sboard1ServiceImpl implements Sboard1Service {
        @Autowired  Sboard1Dao  dao;
-       
-	
 	public int insert(Sboard1Dto dto) {  
 		try { dto.setBip(InetAddress.getLocalHost().getHostAddress());
 		}catch(UnknownHostException e) {e.printStackTrace();}
@@ -23,8 +21,8 @@ public class Sboard1ServiceImpl implements Sboard1Service {
 		return dao.insert(dto); 
 		}
 	public List<Sboard1Dto> selectAll() {  return dao.selectAll(); }
+	public Sboard1Dto select(int id) { dao.updateHit(id); return dao.select(id);}
 	
-	public Sboard1Dto select(int id) {  return dao.select(id); }
 	public Sboard1Dto selectUpdateForm(int id) {  return dao.select(id); }
 	public int update(Sboard1Dto dto) {  return dao.update(dto); }
 	public int delete(Sboard1Dto dto) {  return dao.delete(dto); }

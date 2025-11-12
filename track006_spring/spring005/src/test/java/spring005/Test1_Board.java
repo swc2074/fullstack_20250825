@@ -36,10 +36,12 @@ public class Test1_Board {
 @Test public void test5() throws UnknownHostException{ 
 			
 			//5. delete
-			Sboard1Dto dto = new Sboard1Dto();
-			dto.setId(41); dto.setBpass("1");
-			System.out.println(service.delete(dto));
-			System.out.println(service.selectAll());
+//			Sboard1Dto dto = new Sboard1Dto();
+//			dto.setId(41); dto.setBpass("1");
+//			System.out.println(service.delete(dto));
+//			System.out.println(service.selectAll());
+	
+	
 			//4. update
 //			Sboard1Dto dto = new Sboard1Dto();
 //			dto.setBtitle("title-new"); dto.setBcontent("content-new");
@@ -47,15 +49,16 @@ public class Test1_Board {
 //			System.out.println(service.update(dto));
 //			
 			//3. select
-			//System.out.println(service.select(41));
+			System.out.println(service.select(20));
+//			System.out.println(service.selectAll());
 			
 			//2. insert
 //			Sboard1Dto dto = new Sboard1Dto();
-//			dto.setAppUserId(33); dto.setBtitle("title33");
-//			dto.setBcontent("content33"); dto.setBpass("1111");
+//			dto.setAppUserId(22); dto.setBtitle("title22");
+//			dto.setBcontent("content22"); dto.setBpass("1111");
 //			
 //			System.out.println(service.insert(dto));
-			
+//			System.out.println(service.selectAll());
 			//1. selectAll
       		//System.out.println(service.selectAll());
 			

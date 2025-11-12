@@ -28,12 +28,14 @@
     values (sboard1_seq.nextval , #{appUserId}, #{btitle}, #{bcontent}, #{bpass}, #{bip})
 		
 	</insert>
+	<update id="updateHit" parameterType="int">
+	update sboard1  set bhit = bhit + 1   where id=#{id}
+	</update>
 
 	<update  id="update"  parameterType="Sboard1Dto">
 	update sboard1
         set BTITLE= #{btitle}, BCONTENT=#{bcontent}
-        where id=#{id} and BPASS=#{bpass}
-		
+        where id=#{id} and BPASS=#{bpass}	
 	</update>
 
 	<delete  id="delete" parameterType="Sboard1Dto">
@@ -46,7 +48,7 @@
 
 
 	<select resultMap  ="sboard1Map" id="select" parameterType="int">
-		delete from sboard1 where id=#{id}
+		select *  from sboard1 where id=#{id}
 	</select>
 
 
