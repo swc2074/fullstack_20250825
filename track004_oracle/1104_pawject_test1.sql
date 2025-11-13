@@ -152,9 +152,11 @@ create table sboard1(
 
 );
 
+update sboard1  set bhit = bhit + 1   where id=19;
+
 delete  from sboard1;
 drop table sboard1;
-
+DESC SBOARD1;
 select * from sboard1;
 create sequence sboard1_seq;
 
