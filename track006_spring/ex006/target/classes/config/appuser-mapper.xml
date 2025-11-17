@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thejoa703.dao.AppUserDao">
+
+      <resultMap id="appUserMap"  type="AppUserDto"> 
+     <result property="id"  column="ID"/>
+     <result property="appUserId"  column="APP_USER_ID"/>
+     <result property="email"  column="EMAIL"/>
+     <result property="password"  column="PASSWORD"/>
+     <result property="mbtiTypeId"  column="MBTI_TYPE_ID"/>
+     <result property="createdAt"  column="CREATED_AT"/>   
+   </resultMap>
+
+
+		<insert id="insert"  parameterType="AppUserDto">
+			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID)  
+             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId})
+		</insert>
+		
+		
+		<update id = "update" parameterType = "AppUserDto">
+			update appuser  
+			set  password=#{password} , MBTI_TYPE_ID=2  
+			where app_user_id=#{appUserId}
+		</update>
+		
+		<delete id = "delete" parameterType="AppUserDto">
+			delete from appuser  where app_user_id=#{appUserId}  and password=#{password}
+		</delete>
+		
+		<select resultMap="appUserMap" id = "selectAll">
+			select * from appuser   order by app_user_id desc
+		</select>
+		
+		<select resultMap = "appUserMap" id = "select"  parameterType="AppuserDto">
+			select * from appuser  where app_user_id=#{appUserId}
+		
+		</select>
+
+		<select  resultType="int" id = "selectLogin" parameterType="AppuserDto">
+			select count(*) from appuser  where  email=#{email}  and PASSWORD=#{password}
+		</select>
+
+
+
+
+
+
+  
+</mapper>
+

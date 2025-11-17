@@ -22,7 +22,7 @@
 	  </div> 
 	  <div class="mb-3  text-end">
 	  	<button type="submit" class="btn btn-primary">글수정</button>
-	  	<a href="${pageContext.request.contextPath}/detail.quest"  class="btn btn-danger">상세페이지</a>
+	  	<a href="${pageContext.request.contextPath}/detail.quest?id=${dto.id}"  class="btn btn-danger">상세페이지</a>
 	  	<a href="javascript:history.go(-1)"  class="btn btn-danger">BACK</a>
 	  </div>
  </form>

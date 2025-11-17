@@ -45,12 +45,27 @@
       			<th scope="col">HIT</th>
       		</tr>	
       	</thead>
+      	
       	<tbody> 
       	
-      	
-      	 <tr><td>${list}</td></tr>
-      	 <tr><td><a href="${pageContext.request.contextPath}/detail.quest?id=23"> detail</a></td></tr>
-	  
+      	 <c:forEach var="dto" items="${list}" varStatus="status">
+
+				<tr>
+					<%-- <td>${dto}</td> --%>
+					<td>${list.size()-status.index}</td>
+
+					<td><a
+						href="${pageContext.request.contextPath}/detail.quest?id=${dto.id}">
+							${dto.btitle}</a></td>
+					<td>${dto.appUserId}</td>
+					<td>${dto.createdAt}</td>
+					<td>${dto.bhit}</td>
+				</tr>
+
+
+
+
+			</c:forEach>
       	</tbody>
       </table> 
 		<p class="text-end">

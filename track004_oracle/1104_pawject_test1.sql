@@ -194,5 +194,93 @@ select * from sboard1;
 commit;
 
 
+--1117 ex006
+-----------------------------------------------------------------
+이름           널?       유형            
+------------ -------- ------------- 
+APP_USER_ID  NOT NULL NUMBER        
+EMAIL        NOT NULL VARCHAR2(100) 
+PASSWORD              VARCHAR2(100) 
+MBTI_TYPE_ID          NUMBER        
+CREATED_AT            DATE  
 
+
+desc appuser;
+select * from appuser;
+create sequence appuserid_seq;
+
+--insert:
+insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID)
+         values (appuserid_seq.nextval ,'A@A', 1111, 3);
+
+
+         insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@A', 1111, 3, SYSDATE);
+         
+         insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@B', 1111, 4, SYSDATE);
+         
+         insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@C', 1111, 5, SYSDATE);
+         
+           insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@D', 1111, 6, SYSDATE);
+         
+          insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@E', 1111, 7, SYSDATE);
+         
+         insert into appuser(APP_USER_ID, EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)
+         values (appuserid_seq.nextval ,'A@F', 1111, 8, SYSDATE);
+         
+        
+--selectAll
+         select count(*) cnt from appuser where  email='A@z'   and password='1111'
+         select * from appuser  order by APP_USER_ID desc;
+         select * from appuser  where APP_USER_ID=2;
+
+--select
+        select * from appuser where APP_USER_ID=4;
+--update
+        update appuser
+        set EMAIL='A@B', MBTI_TYPE_ID=5
+        where APP_USER_ID=1 and PASSWORD=1111;
+
+--delete
+        delete from appuser where APP_USER_ID=6 and PASSWORD=11;
+        delete from post where APP_USER_ID=6 and PASSWORD=11;
+        
+        delete from appuser;
+        truncate table appuser;
+        select * from appuser;
+
+select * from post where APP_USER_ID = 6;
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+desc appuser;
+select * from appuser;
+--      create : 회원가입 (시퀀스이용)
+insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID)  
+values (appuser_seq.nextval, 'a@a' , '1111',1);
+
+--      read   : 로그인(이메일과 비번이 같으면 로그인) , 마이페이지 (세션이용), 전체 유저확인
+select count(*) cnt from appuser  where  email='a@a'  and PASSWORD='1111';
+select * from appuser   order by app_user_id desc; 
+select * from appuser   where app_user_id=21; 
+--
+--      update : 마이페이지 정보수정 (mbti와 비밀번호 수정할수 있게)
+update appuser  set  password='1234' , MBTI_TYPE_ID=2  where app_user_id=2  and password='1111'; 
+--      delete : 탈퇴
+delete from appuser  where app_user_id=6  and password='11'; 
+------------------------------------------------------------
+------------------------------------------------------------
+
+select table_name from user_tables;
+delete from MBTITYPE;
+delete from post;
+desc appuser;
+
+
+SELECT username, account_status FROM dba_users WHERE username='scott';
 

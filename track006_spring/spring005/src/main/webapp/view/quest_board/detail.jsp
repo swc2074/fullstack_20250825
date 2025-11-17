@@ -22,22 +22,22 @@
 
 
    <div class="container card  my-5 p-4">
-      <h3 class="card-header"> MBTI  QUEST 상세보기 ${dto} }</h3>
+      <h3 class="card-header"> MBTI  QUEST 상세보기 <%-- ${dto} --%> </h3>
 	  <div> 
 	      <input type="hidden"   name="app_user_id"  value=""> 
 		  <div class="mb-3 mt-3">
 		    <label for="bhit" class="form-label">조회수</label>
-		    <input type="text" class="form-control" id="bhit" name="bhit"  readonly   value="">
+		    <input type="text" class="form-control" id="bhit" name="bhit"  readonly   value="${dto.bhit}">
 		  </div> 
 		  <div class="mb-3 mt-3">
-		    <label for="title" class="form-label">TITLE:</label>
+		    <label for="btitle" class="form-label">TITLE:</label>
 		    <input type="text" class="form-control" id="title" 
-		    		placeholder="내용을 입력해주세요" name="title"  readonly  value="">
+		    		placeholder="내용을 입력해주세요" name="btitle"  readonly  value="${dto.btitle}">
 		  </div>  
 		  <div class="mb-3">
-		    <label for="content" class="form-label">CONTENT:</label>
-		    <textarea class="form-control" id="content" placeholder="내용을 입력해주세요"   
-		    	readonly name="content"></textarea>
+		    <label for="bcontent" class="form-label">CONTENT:</label>
+		    <textarea class="form-control" id="bcontent" placeholder="내용을 입력해주세요"   
+		    	readonly name="bcontent">${dto.bcontent}</textarea>
 		  </div> 
 		   
 			<div class="mb-3">
