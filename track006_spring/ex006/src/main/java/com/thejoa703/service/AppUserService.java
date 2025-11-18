@@ -1,11 +1,11 @@
-package com.thejoa703.dao;
+package com.thejoa703.service;
 
 import java.util.List;
 
 import com.thejoa703.dto.AppUserDto;
 
-@MbtiDao
-public interface AppUserDao {
+public interface AppUserService {
+	
 	public int insert(AppUserDto dto);
 	public int update(AppUserDto dto);
 	public int delete(AppUserDto dto);
@@ -13,8 +13,6 @@ public interface AppUserDao {
 	
 	public AppUserDto  select(int appUserId);
 	public AppUserDto  selectEmail(String email);
-	
-	public int selectLogin(AppUserDto dto);
-	
+	public int selectLogin (AppUserDto dto);
 
 }

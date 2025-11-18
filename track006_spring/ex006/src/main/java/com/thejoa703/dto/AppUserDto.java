@@ -1,5 +1,7 @@
 package com.thejoa703.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Data;
 
 @Data
@@ -9,6 +11,7 @@ public class AppUserDto {
 	private String password;
 	private int mbtiTypeId;
 	private int bhit;
-	private String createdAt;
+	private String bip;
+	private java.sql.Timestamp createdAt;
 
 }

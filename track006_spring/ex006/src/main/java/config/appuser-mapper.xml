@@ -5,7 +5,7 @@
 <mapper namespace="com.thejoa703.dao.AppUserDao">
 
       <resultMap id="appUserMap"  type="AppUserDto"> 
-     <result property="id"  column="ID"/>
+   
      <result property="appUserId"  column="APP_USER_ID"/>
      <result property="email"  column="EMAIL"/>
      <result property="password"  column="PASSWORD"/>
@@ -15,14 +15,18 @@
 
 
 		<insert id="insert"  parameterType="AppUserDto">
-			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID)  
-             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId})
+			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)  
+             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId}, sysdate)
 		</insert>
 		
+		<!-- <update id="updateHit"   parameterType="int">
+			update appuser set bhit = bhit +1 where id=#{id}
 		
+		</update> -->
+			
 		<update id = "update" parameterType = "AppUserDto">
 			update appuser  
-			set  password=#{password} , MBTI_TYPE_ID=2  
+			set  password=#{password} , MBTI_TYPE_ID=#{mbtiTypeId} 
 			where app_user_id=#{appUserId}
 		</update>
 		
@@ -38,15 +42,16 @@
 			select * from appuser  where app_user_id=#{appUserId}
 		
 		</select>
+		
+		<select resultMap = "appUserMap" id = "selectEmail"  parameterType="AppuserDto">
+			select * from appuser  where email=#{email}
+		
+		</select>
+		
 
 		<select  resultType="int" id = "selectLogin" parameterType="AppuserDto">
 			select count(*) from appuser  where  email=#{email}  and PASSWORD=#{password}
 		</select>
-
-
-
-
-
 
   
 </mapper>

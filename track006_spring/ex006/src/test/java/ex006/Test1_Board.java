@@ -1,5 +1,7 @@
 package ex006;
 
+import java.rmi.UnknownHostException;
+
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.thejoa703.dao.AppUserDao;
 import com.thejoa703.dto.AppUserDto;
+import com.thejoa703.service.AppUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:config/root-context.xml")
@@ -23,25 +26,63 @@ public class Test1_Board {
 	@Autowired DataSource  ds;
 	@Autowired SqlSession session;
 	@Autowired AppUserDao dao;
+	@Autowired AppUserService service;
 	
 	@Ignore @Test public void test1() {System.out.println(context);}
 	@Ignore @Test public void test2() {System.out.println(ds);}
 	@Ignore @Test public void test3() {System.out.println(session);}
 	
-	@Test public void test4() {
+	@Test public void test5( )  throws UnknownHostException{
+		
+	//5.	delete
+//		AppUserDto dto = new AppUserDto();
+//		dto.setAppUserId(30); dto.setPassword("1111");
+//		System.out.println(service.delete(dto));
+//		System.out.println(service.selectAll());
+
+	
+		//4. update
+		AppUserDto dto = new AppUserDto();
+		dto.setAppUserId(28); dto.setEmail("d666666@dvvv");
+		dto.setPassword("55"); dto.setMbtiTypeId(3);
+		
+		System.out.println(service.update(dto));
+		//System.out.println(service.select(28));
+		//System.out.println(service.selectAll());
+		
+		
+
+//		
+		
+		//3. select
+		
+		//System.out.println(service.select(2));
+		System.out.println(service.selectAll());
+		
+		//2. insert
+//		AppUserDto dto = new AppUserDto();
+//		dto.setAppUserId(66);
+//		dto.setEmail("g66@uuh");
+//		dto.setPassword("66");
+//		dto.setMbtiTypeId(6);
+//		dto.setCreatedAt(null);
+//        System.out.println(service.insert(dto));
+		
+		
+	
+	}
+	
+	@Ignore @Test public void test4() {
 		
 		
 		//5. delete
-		AppUserDto dto = new AppUserDto();
-		dto.setPassword("22"); dto.setAppUserId(22);
-		System.out.println("6" + dao.delete(dto));
-		 
-		System.out.println("1. " + dao.selectAll());
+//		AppUserDto dto = new AppUserDto();
+//		dto.setPassword("22"); dto.setAppUserId(22);
+//		System.out.println("6" + dao.delete(dto));
+//		 
+//		System.out.println("1. " + dao.selectAll());
 		
 		
-
-
-
 		//4. update
 //		AppUserDto dto = new AppUserDto();
 //		dto.setPassword("22"); dto.setMbtiTypeId(3);
@@ -63,16 +104,10 @@ public class Test1_Board {
 //		dto.setMbtiTypeId(2);
 //		
 //		System.out.println(dao.insert(dto));
-		System.out.println(dao.selectAll());
-		
-		
-		
-		
+	//	System.out.println(dao.selectAll());
+				
 		//1. selectAll
   		//System.out.println(dao.selectAll());
-		
-		
-		 
 		
 	}
 
