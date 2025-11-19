@@ -1,6 +1,7 @@
 package spring005;
 
 import java.net.UnknownHostException;
+import java.util.HashMap;
 
 import javax.sql.DataSource;
 
@@ -14,7 +15,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.thejoa703.dao.Sboard1Dao;
-import com.thejoa703.dto.Sboard1Dto;
 import com.thejoa703.service.Sboard1Service;
 
 
@@ -33,7 +33,17 @@ public class Test1_Board {
 		@Ignore @Test public void test2() { System.out.println(ds);}	
 		@Ignore@Test public void test3() { System.out.println(session);}
 		
-@Test public void test5() throws UnknownHostException{ 
+		@Test public void test6() throws UnknownHostException{ 
+			HashMap<String, String> para= new HashMap<>();
+			para.put("search", "%t%");
+			
+			System.out.println(dao.selectSearch(para));
+		}
+		
+		
+		
+		
+ @Ignore @Test public void test5() throws UnknownHostException{ 
 			
 			//5. delete
 //			Sboard1Dto dto = new Sboard1Dto();

@@ -16,8 +16,8 @@ public class Sboard1Dto {
 	private String btitle;
 	private String bcontent;
 	private String bpass;
-	private String bfile;
-	private int bhit;
+	private String bfile;    // (default: 'no.png')
+	private int bhit;         // BHIT (default: 0 )
 	private String bip;
 	//private LocalDateTime createdAt; CREATE_AT (default: SYSTIMESTAMP)
 	private String createdAt;

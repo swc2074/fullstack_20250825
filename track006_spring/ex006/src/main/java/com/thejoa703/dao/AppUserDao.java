@@ -16,5 +16,10 @@ public interface AppUserDao {
 	
 	public int selectLogin(AppUserDto dto);
 	
+	
+	/*Upload*/
+	public int insert2(AppUserDto dto);
+	public int update2(AppUserDto dto);
+	
 
 }

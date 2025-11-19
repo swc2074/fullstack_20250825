@@ -4,13 +4,38 @@
 <%@ include file="../inc/header.jsp" %>
    <div class="container card  my-5">
       <h3  class="card-header"> MYPAGE </h3> 
-		<table class="table  table-striped  table-bordered  table-hover">
-			<tbody class="table-info ">
-				<tr> <th scope="row">Email</th>       <td> ${dto.email} </td> </tr>
-				<tr> <th scope="row">MBTI TYPE</th>    <td> ${dto.mbtiTypeId}</td> </tr>
-				<tr> <th scope="row">회원가입날짜</th>    <td>${dto.createdAt} </td></tr>
-			</tbody>
-		</table>
+		<table class="table  table-striped  table-bordered  table-hover align-middle">
+		<colgroup>
+			<col style="width: 8%">
+			<col style="width: 38%">
+			<col style="width: 62%">
+
+		</colgroup>
+		<tbody class="table-info ">
+			<tr>
+				<td rowspan="3"><img
+					src="${pageContext.request.contextPath}/upload/${dto.ufile}" alt=""
+					class="w-10"></td>
+
+
+				<th scope="row">Email</th>
+				<td>${dto.email}</td>
+			</tr>
+
+
+
+
+			<tr>
+				<th scope="row">MBTI TYPE</th>
+				<td>${dto.mbtiTypeId}</td>
+			</tr>
+
+			<tr>
+				<th scope="row">회원가입날짜</th>
+				<td>${dto.createdAt}</td>
+			</tr>
+		</tbody>
+	</table>
 		
 	  	<p><a href="${pageContext.request.contextPath}/edit.users?appUserId=${dto.appUserId}"  
 	  	         class="btn btn-danger">UPDATE</a></td>

@@ -10,6 +10,9 @@ public class AppUserDto {
 	private String email;
 	private String password;
 	private int mbtiTypeId;
+	
+	private String ufile; // BFILE (default: 'no.png')
+	
 	private int bhit;
 	private String bip;
 	private java.sql.Timestamp createdAt;

@@ -40,7 +40,7 @@
 	    
 	   </c:if>
 	   
-	   <c:if test="${not empty sessionScope.email}">
+	   <c:if test="${empty sessionScope.email}">
 	      <li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath}/login.users">LOGIN</a>
 	      </li>   

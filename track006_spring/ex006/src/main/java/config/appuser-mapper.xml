@@ -10,13 +10,19 @@
      <result property="email"  column="EMAIL"/>
      <result property="password"  column="PASSWORD"/>
      <result property="mbtiTypeId"  column="MBTI_TYPE_ID"/>
-     <result property="createdAt"  column="CREATED_AT"/>   
+     <result property="createdAt"  column="CREATED_AT"/>
+     <result property="ufile"       column="UFILE"/>   
    </resultMap>
 
 
 		<insert id="insert"  parameterType="AppUserDto">
-			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID, CREATED_AT)  
-             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId}, sysdate)
+			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID )  
+             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId})
+		</insert>
+		
+		<insert id="insert2"  parameterType="AppUserDto">
+			insert into appuser (APP_USER_ID , EMAIL, PASSWORD, MBTI_TYPE_ID,UFILE)  
+             values ( appuserid_seq.nextval , #{email},#{password},#{mbtiTypeId},#{ufile})
 		</insert>
 		
 		<!-- <update id="updateHit"   parameterType="int">
@@ -27,6 +33,12 @@
 		<update id = "update" parameterType = "AppUserDto">
 			update appuser  
 			set  password=#{password} , MBTI_TYPE_ID=#{mbtiTypeId} 
+			where app_user_id=#{appUserId}
+		</update>
+		
+		<update id = "update2" parameterType = "AppUserDto">
+			update appuser  
+			set  password=#{password} , MBTI_TYPE_ID=#{mbtiTypeId} , UFILE=#{ufile}
 			where app_user_id=#{appUserId}
 		</update>
 		

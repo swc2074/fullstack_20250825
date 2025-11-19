@@ -280,7 +280,8 @@ select table_name from user_tables;
 delete from MBTITYPE;
 delete from post;
 desc appuser;
-
+select * from appuser;
 
 SELECT username, account_status FROM dba_users WHERE username='scott';
-
+alter table appuser add (bhit number);
+alter table appuser add (id number);
