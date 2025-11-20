@@ -1,18 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ex006</groupId>
-  <artifactId>ex006</artifactId>
+  <groupId>spring005</groupId>
+  <artifactId>spring005</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
   <dependencies>
-
-	<dependency>
-		<groupId>com.sun.activation</groupId>
-		<artifactId>javax.activation</artifactId>
-		<version>1.2.0</version>
-	</dependency>
-  
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -86,7 +79,7 @@
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
-			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 			<version>1.16</version>
 		</dependency>
 		<!-- HikariCP -->
@@ -120,7 +113,7 @@
   <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
-    <version>3.2.17.RELEASE</version>
+    <version>4.3.27.RELEASE</version>
   </dependency>
   
   <!--jstl  -->
@@ -167,11 +160,28 @@
 <!--JACKSON  -->  
 <!--JACKSON  -->
      <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
-   <dependency>
+<!--    <dependency>
        <groupId>org.codehaus.jackson</groupId>
        <artifactId>jackson-mapper-asl</artifactId>
        <version>1.9.13</version>
-   </dependency>
+   </dependency> -->
+   
+   <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.17.2</version> <!-- 최신 안정 버전 사용 -->
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.17.2</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.17.2</version>
+</dependency>
+   
    
     <!-- XML -->
 	<!-- XML -->
@@ -196,6 +206,24 @@
    
    
    <!-- img upload -->
+    <!-- img upload -->
+	   <!-- commons-fileupload -->
+   <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.1</version>
+   </dependency>
+
+   <!-- commons-io -->
+   <dependency>
+   
+   
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+   </dependency>
+
+	<!-- img upload -->
 	<!-- img upload -->
 	<!-- commons-fileupload -->
 				<dependency>
@@ -212,22 +240,23 @@
 				</dependency>
 		
 	<!-- img upload -->
-	<!-- img upload -->		
-		
+	<!-- img upload -->			
+			
 
 	</dependencies>
-  
-  
-  
+	
+	
+	
+	
   <build>
-  
-  	<resources>
-  		<resource>
-  			<directory>src/main/resources</directory>
-  		
-  		</resource>
-  	
-  	</resources>
+     <resources>
+     		<resource>
+     			<directory>src/main/resources</directory>
+     		</resource>
+     </resources>
+     
+     
+     
   
   
     <plugins>

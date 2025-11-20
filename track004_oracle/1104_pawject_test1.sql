@@ -285,3 +285,9 @@ select * from appuser;
 SELECT username, account_status FROM dba_users WHERE username='scott';
 alter table appuser add (bhit number);
 alter table appuser add (id number);
+
+select * from appuser 
+where app_user_id = 21;
+desc appuser;
+
+select count(*) cnt from appuser where email='1@1';

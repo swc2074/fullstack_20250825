@@ -65,6 +65,25 @@
 			select count(*) from appuser  where  email=#{email}  and PASSWORD=#{password}
 		</select>
 
+   <!-- 아이디중복 검사  -->
+   <!-- 아이디중복 검사  -->
+   <select resultType="int" id="iddouble" parameterType="String">
+   
+   select count(*) cnt from appuser where email=#{email}
+   </select>
+
+  <!-- 관리자 해당유저 삭제  -->
+  <!-- 관리자 해당유저 삭제  -->
+       <delete id = "deleteAdmin" parameterType="AppUserDto">
+			delete from appuser  where app_user_id=#{appUserId}  
+		</delete>
+		
+		<update id = "updateAdmin" parameterType = "AppUserDto">
+			update appuser  
+			set  MBTI_TYPE_ID=#{mbtiTypeId} 
+			where app_user_id=#{appUserId}
+		</update>
+
   
 </mapper>
 

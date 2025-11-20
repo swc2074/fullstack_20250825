@@ -75,30 +75,60 @@
         $("#search").on("keyup" , function(){  
             console.log( $(this).val().trim()  ); 
             let keyword = $(this).val().trim();
-            
-            $.ajax({
-        		url:"${pageContext.request.contextPath}/selectSearch",
-        		type:"GET",
-        		data:{ search : keyword },
-        		success:function(res){
-        			console.log(res);
-        		}
-            
-           /*  if(keyword.length === 0){
-            	$("#resultArea tbody").empty().append('<tr><td colspan="5"> 검색어를 입력하세요.</td></tr>')
-            	return;
-            }else{
-            	$.ajax({
-            		url:"${pageContext.request.contextPath}/selectSearch",
-            		type:"GET",
-            		data:{ search : keyword },
-            		success:function(res){
-            			$("#resultArea tbody").append(res);
+            ///////////////////////////////////////////////////////////
+            if(keyword ===""){
+            	$("#resultArea tbody")
+            	.empty()
+            	.append("<tr><td colspan ='5'> 검색어를 입력하세요.</td></tr>");
+            }else{ // 서버요청
+					$.ajax({
+            	url:"${pageContext.request.contextPath}/selectSearch",
+            	type:"GET",
+            	data:{search : keyword},
+            	success:function(res){
+            		console.log(res);
+            		$("#resultArea tbody").empty();
+            		$.each(res, function(index, dto){
+            			let row="<tr>"
+            			+"<td>" + (res.length - index) + "</td>"
+            			+"<td><a href='${pageContext.request.contextPath}/detail.quest?id="+dto.id+"'>"
+            			+ dto.btitle + "</a></td>"
+            			+"<td>" + dto.appUserId + "</td>"
+            			+"<td>" + dto.createdAt + "</td>"
+            			+"<td>" + dto.bhit + "</td>"
+            			+ "</tr>";
+            			$("#resultArea  tbody").append(row);
             			
-            		}
-            	});
-            } */
-            });
+            		});
+            		
+            	} 
+            });         	
+            }
+            ////////////////////////////////////////////////////////////
+											           /*  $.ajax({
+											        		url:"${pageContext.request.contextPath}/selectSearch",
+											        		type:"GET",
+											        		data:{ search : keyword },
+											        		success:function(res){
+											        			console.log(res);
+											        		} */
+											            
+											           /*  if(keyword.length === 0){
+											            	$("#resultArea tbody").empty().append('<tr><td colspan="5"> 검색어를 입력하세요.</td></tr>')
+											            	return;
+											            }else{
+											            	$.ajax({
+											            		url:"${pageContext.request.contextPath}/selectSearch",
+											            		type:"GET",
+											            		data:{ search : keyword },
+											            		success:function(res){
+											            			$("#resultArea tbody").append(res);
+											            			
+											            		}
+											            	});
+											            } */
+											  //          }); // $.ajax
+											  /////////////////////////////////////////////////////////////////
         });
      });
      </script>   

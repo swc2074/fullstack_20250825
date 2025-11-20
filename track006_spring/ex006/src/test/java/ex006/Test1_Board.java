@@ -32,7 +32,39 @@ public class Test1_Board {
 	@Ignore @Test public void test2() {System.out.println(ds);}
 	@Ignore @Test public void test3() {System.out.println(session);}
 	
-	@Test public void test5( )  throws UnknownHostException{
+	@Test public void test7() {
+		
+		//삭제
+		
+		  AppUserDto dto = new AppUserDto(); dto.setAppUserId(45);
+		  System.out.println(dao.deleteAdmin(dto));
+		
+		
+		// 3. 해당값 유저확인
+		System.out.println(dao.select(45));
+		
+		//4. 수정
+		
+//		 AppUserDto dto = new AppUserDto(); dto.setMbtiTypeId(3);
+//		 dto.setAppUserId(45); System.out.println(dao.updateAdmin(dto));
+		 
+				
+//1.  전체
+		// System.out.println(dao.selectAll());
+//[AppUserDto(appUserId=45, email=1@1, password=1, mbtiTypeId=1, ufile=user6.png, bhit=0, bip=null, createdAt=null)
+		
+	}
+	
+	
+	
+	@Ignore @Test public void test6() {
+		System.out.println(dao.iddouble("1@1"));
+		System.out.println(dao.iddouble("9@9"));
+		System.out.println(dao.iddouble("2@2"));
+		
+	}
+	
+	@Ignore @Test public void test5( )  throws UnknownHostException{
 		
 	//5.	delete
 //		AppUserDto dto = new AppUserDto();

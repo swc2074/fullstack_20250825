@@ -13,6 +13,8 @@
       			<th scope="col">EMAIL</th>
       			<th scope="col">MBTI TYPE</th>
       			<th scope="col">DATE</th>
+      			<th scope="col">수정</th>
+      			<th scope="col">삭제</th>
       		</tr>	
       	</thead>
       	<tbody>  
@@ -28,6 +30,8 @@
       				
       				<td>${dto.mbtiTypeId}</td>
       				<td>${dto.createdAt}</td>
+      				<td><input type="button" value="수정" class="btn btn-primary" /></td>
+      				<td><input type="button" value="삭제" class="btn btn-danger" /></td>
       			
       			</tr>
       		
