@@ -39,20 +39,42 @@ public class AjaxSearchController {
 	}
 	
 	
+	//http://localhost:8282/ex006/updateAdmin?appUserId=39&mbtiTypeId=2
+	
 	@RequestMapping("/updateAdmin")
-	public Map<String,Object> select(@RequestParam int appUserId , @RequestParam int mbtiTypeId){
+	public Map<String,Object> updateAdmin(@RequestParam int appUserId , 
+										  @RequestParam int mbtiTypeId){
 	//public Map<String,Object>  updateAdmin( @RequestBody AppUserDto dto){
-		AppUserDto dto = new AppUserDto(); dto.setAppUserId(appUserId); dto.setMbtiTypeId(mbtiTypeId);
+	//AppUserDto dto = new AppUserDto(); dto.setAppUserId(appUserId); dto.setMbtiTypeId(mbtiTypeId);
 		Map<String,Object> result = new HashMap<>();
+		AppUserDto dto = new AppUserDto();
+		dto.setAppUserId(appUserId); dto.setMbtiTypeId(mbtiTypeId);
+		
 		result.put("result", service.updateAdmin(dto));
 		return result;
 	}
 	
-	@RequestMapping("/deleteAdmin")
-	public Map<String,Object>  deleteAdmin( @RequestBody AppUserDto dto){
-		Map<String,Object> result = new HashMap<>();
-		result.put("result", service.deleteAdmin(dto));
-		return result;
-	}
+	
+	//http://localhost:8282/ex006/deleteAdmin?appUserId=39
+	
+		@RequestMapping("/deleteAdmin")
+		public Map<String,Object> deleteAdmin(@RequestParam int appUserId) 
+											  {
+		//public Map<String,Object>  updateAdmin( @RequestBody AppUserDto dto){
+		//AppUserDto dto = new AppUserDto(); dto.setAppUserId(appUserId); dto.setMbtiTypeId(mbtiTypeId);
+			Map<String,Object> result = new HashMap<>();
+			AppUserDto dto = new AppUserDto();
+			dto.setAppUserId(appUserId);
+			result.put("result", service.deleteAdmin(dto));
+			return result;
+		}
+	
+	
+//	@RequestMapping("/deleteAdmin")
+//	public Map<String,Object>  deleteAdmin( @RequestBody AppUserDto dto){
+//		Map<String,Object> result = new HashMap<>();
+//		result.put("result", service.deleteAdmin(dto));
+//		return result;
+//	}
 
 }

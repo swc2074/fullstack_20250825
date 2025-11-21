@@ -291,3 +291,6 @@ where app_user_id = 21;
 desc appuser;
 
 select count(*) cnt from appuser where email='1@1';
+
+delete from appuser
+where app_user_id = 1;

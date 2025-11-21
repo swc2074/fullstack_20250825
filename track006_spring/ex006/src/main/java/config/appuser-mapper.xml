@@ -81,7 +81,7 @@
 		<update id = "updateAdmin" parameterType = "AppUserDto">
 			update appuser  
 			set  MBTI_TYPE_ID=#{mbtiTypeId} 
-			where app_user_id=#{appUserId}
+			where app_user_id=#{appUserId} 
 		</update>
 
   
