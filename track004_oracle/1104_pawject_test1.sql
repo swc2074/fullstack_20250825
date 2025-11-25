@@ -294,3 +294,39 @@ select count(*) cnt from appuser where email='1@1';
 
 delete from appuser
 where app_user_id = 1;
+
+
+    select email, password, auth
+    from appuser left join  authorities using (email)
+    where email='1@1';
+    
+select u.email, password, auth
+    from appuser u left join  authorities a on (u.email = a.email)
+    where u.email='1@1';
+    
+    select email, password, auth
+    from appuser natural join authorities 
+    where email='1@1';
+    
+    select u.email, password, auth
+    from appuser u, authorities a
+    where u.email=a.email and u.email='1@1';
+    
+    desc sboard1;
+    select count(*)from sboard1;
+    
+    insert into sboard1  ( ID, APP_USER_ID, btitle, bcontent, bpass, bfile, bip)
+        select sboard1_seq.nextval, APP_USER_ID, btitle, bcontent, bpass,bfile,bip from sboard1;
+        
+        commit;
+    
+    select * 
+    from (
+      select row_number() over( order by created_at desc) as rnum, 
+      id, app_user_id, btitle, bcontent, bpass, bfile, bip, bhit, created_at
+      from sboard1
+    ) A
+    where A.rnum between 1 and 10;
+    
+    
+    
