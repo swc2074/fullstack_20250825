@@ -6,6 +6,7 @@
   <form action="${pageContext.request.contextPath}/updateEdit.quest"  
   		method="post"  encType="multipart/form-data"  > 
      <input type="hidden"   name="id"  value="${dto.id}">  
+          <input  type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 	  <div class="mb-3 mt-3">
 	    <label for="btitle" class="form-label">TITLE:</label>
 	    <input type="text" class="form-control" id="btitle" 
@@ -28,7 +29,12 @@
 	  	<input type="text" class="form-control" id="bfile"   readonly  name="bfile"  value="${dto.bfile}">
 	  </div>	  
 	  <div class="mb-3  text-end">
+	  
+	  
+	  <!-- 로그인한 사람만 글 수정 -->
+	  <sec:authorize access="isAuthenticated()"> 
 	  	<button type="submit" class="btn btn-primary">글수정</button>
+	  </sec:authorize>
 	  	<a href="javascript:history.go(-1)"  class="btn btn-danger">BACK</a>
 	  </div>
  </form>

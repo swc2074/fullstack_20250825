@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.thejoa703.dao.AppUserDao;
@@ -16,6 +18,8 @@ import com.thejoa703.dto.AuthDto;
 @Service
 public class AppUserServiceImpl  implements AppUserService{
 	@Autowired  AppUserDao   dao;
+	@Autowired PasswordEncoder pwencoder;
+	
 	@Override public int insert(AppUserDto dto) { return dao.insert(dto); }
 	@Override public int update(AppUserDto dto) { return dao.update(dto); }
 	@Override public int delete(AppUserDto dto) { return dao.delete(dto); }
@@ -23,6 +27,30 @@ public class AppUserServiceImpl  implements AppUserService{
 	@Override public AppUserDto select(int appUserId) { return dao.select(appUserId); } 
 	@Override public AppUserDto selectEmail(String email) { return dao.selectEmail(email); }
 	@Override public int selectLogin(AppUserDto dto) { return dao.selectLogin(dto); }
+	
+	
+	@Transactional
+	
+	@Override public int insert3(MultipartFile file, AppUserDto dto) { 
+		   AuthDto adto = new AuthDto(); adto.setEmail(dto.getEmail()); adto.setAuth("ROLE_MEMBER");
+		   int step1 = dao.insertAuth(adto);
+		   
+		   String fileName=null;
+		   if(  !file.isEmpty() ) {  // 파일이 비어있는게 아니라면
+			   fileName   = file.getOriginalFilename(); // 원본파일이름
+			   String uploadPath = "C:/file/";
+			   File   img        = new File(uploadPath + fileName);  //java.io.File
+			   try { file.transferTo(img); //파일올리기 
+			   }catch (IOException e) { e.printStackTrace(); }
+		   }else {
+			   fileName = "user" + ((int)((Math.random()*7)+1)) + ".png";
+		   }
+           dto.setPassword(pwencoder.encode(dto.getPassword()));
+		   dto.setUfile(fileName); 
+		   return dao.insert2(dto);
+		}
+	
+	
 	
 	/* Upload */
 	@Override public int insert2(MultipartFile file, AppUserDto dto) { 
@@ -64,5 +92,6 @@ public class AppUserServiceImpl  implements AppUserService{
 		AppUserAuthDto  dto= new AppUserAuthDto(); dto.setEmail(email);
 		return dao.readAuth(dto);
 	}
+
 	
 }

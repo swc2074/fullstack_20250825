@@ -36,4 +36,8 @@ public interface AppUserService {
 	/* security */
 	public int insertAuth(AuthDto dto);
 	public AppUserAuthDto readAuth(String email);
+	
+	public int insert3(MultipartFile file, AppUserDto dto );
+	
+	
 }

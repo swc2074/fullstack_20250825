@@ -34,6 +34,7 @@
 			</select>
 		</div>
 		<button type="submit" class="btn btn-primary">정보수정-비밀번호/MBTI TYPE</button>
+		     <input  type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 	</form>
 </div>
 <!-- ctrl + shift + f -->

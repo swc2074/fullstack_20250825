@@ -3,8 +3,9 @@
 <!-- 	header		 --> 
 <div class="container mt-5">
 	<h3>WELCOME! 회원가입</h3>
-	<form action="${pageContext.request.contextPath}/uploadJoin.users"  	
+	<form action="${pageContext.request.contextPath}/security/join"  	
 			method="post"  encType="multipart/form-data" >
+			    <input  type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 		<div class="mb-3 mt-3">
 			<label  for="email" class="form-label">Email:</label> 
 			<input  type="email" class="form-control" id="email"
@@ -29,7 +30,7 @@
 					}else{ // 아니라면 ajax  - iddouble /POST / email / 
 						$.ajax({
 							url:"${pageContext.request.contextPath}/iddouble",
-							type:"POST",
+							type:"GET", //## POST는 무조건 인증해야함.
 							data:{email : keyword} , 
 							success:function( res ){  //res = {cnt: 1}
 								console.log(res);  
