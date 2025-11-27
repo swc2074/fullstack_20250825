@@ -1,0 +1,20 @@
+package com.thejoa703.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.thejoa703.dto.AppUserAuthDto;
+import com.thejoa703.service.AppUserService;
+
+public class CustomUserDetailsService implements UserDetailsService {
+	@Autowired  AppUserService service;
+	@Override									// 아이디, email
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// email.password. 권한
+		AppUserAuthDto dto = service.readAuth(username); // 해당유저 정보를 가져오기: email, password, 권한들
+		return service.readAuth(username) == null? null : new CustomUser(dto) ;
+	}
+
+}

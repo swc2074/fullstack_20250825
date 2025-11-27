@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.thejoa703.dao.AppUserMapper">
+   
+
+
+  <!-- INSERT -->
+  <insert id="insert" parameterType="AppUser">
+    INSERT INTO appuser(app_user_id, email, password, mbti_type_id, ufile, mobile, nickname)
+    VALUES (appuser_seq.nextval, #{email}, #{password}, #{mbtiTypeId}, #{ufile, jdbcType=VARCHAR}, #{mobile}, #{nickname})
+  </insert>
+
+  <!-- UPDATE -->
+  <update id="update" parameterType="AppUser">
+    UPDATE appuser
+    SET mbti_type_id = #{mbtiTypeId},
+        ufile = #{ufile, jdbcType=VARCHAR},
+        mobile = #{mobile},
+        nickname = #{nickname}
+    WHERE app_user_id = #{appUserId}
+  </update>
+
+  <!-- DELETE -->
+  <delete id="delete" parameterType="AppUser">
+    DELETE FROM appuser WHERE app_user_id = #{appUserId}
+  </delete>
+  
+  <resultMap type="AppUser" id="appUserMap">
+  	<result  property ="appUserId"  column="APP_USER_ID"/>
+  	<result  property ="email"  column="EMAIL"/>
+  	
+  	<result  property ="password"  column="PASSWORD"/>
+  	<result  property ="mbtiTypeId"  column="MBTI_TYPE_ID"/>
+  	<result  property ="createdAt"  column="CREATED_AT"/>
+  	<result  property ="ufile"  column="UFILE"/>
+  	<result  property ="mobile"  column="MOBILE"/>
+  	<result  property ="nickname"  column="NICKNAME"/>
+  
+  </resultMap>
+  
+  <resultMap type="AuthDto" id="authMap">
+  			<result property="email"   column="EMAIL"/>
+  			<result property="auth"   column="AUTH"/>
+  
+  </resultMap>
+  
+  <resultMap type="AppUserAuthDto" id="appUserAuthMap">
+  			<result property="email"   column="EMAIL"/>
+  			<result property="password"   column="PASSWORD"/>
+  			<collection property="authList"   resultMap="authMap"/>
+  
+  </resultMap>
+  
+
+  <!-- SELECT -->
+  <select resultMap="appUserAuthMap" id="readAuth" parameterType="AppUser" >
+    SELECT u.email, u.password, a.auth
+    FROM appuser u
+    LEFT JOIN authorities a ON u.email = a.email
+    WHERE u.email = #{email}
+  </select>
+
+  <select resultMap="appUserMap" id="select" parameterType="AppUser" >
+    SELECT * FROM appuser WHERE email = #{email}
+  </select>
+
+  <select resultMap="appUserMap"  id="selectPassword" parameterType="AppUser" >
+    SELECT password FROM appuser WHERE email = #{email}
+  </select>
+
+</mapper>
