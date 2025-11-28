@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.thejoa703.dao.AppUserMapper;
 import com.thejoa703.dto.AppUser;
 import com.thejoa703.dto.AppUserAuthDto;
+import com.thejoa703.dto.AuthDto;
 
 @Service
 public class AppUserSecurityServiceImpl implements AppUserSecuritySevice {
@@ -19,6 +20,10 @@ public class AppUserSecurityServiceImpl implements AppUserSecuritySevice {
 	@Autowired PasswordEncoder pwencoder;
 
 	@Override public int insert(MultipartFile file, AppUser dto) { 
+		//0. 권한 (ROLE_MEMBER)
+		AuthDto  adto= new AuthDto();
+		adto.setEmail(dto.getEmail());  adto.setAuth("ROLE_MEMBER");
+		dao.insertAuth(adto); // 권한주기
 		/* 파일올리기*/
 		 
 		   String fileName   = null;

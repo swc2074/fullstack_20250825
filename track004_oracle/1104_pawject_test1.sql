@@ -328,5 +328,26 @@ select u.email, password, auth
     ) A
     where A.rnum between 1 and 10;
     
+  create sequence appuser_seq;  
     
+insert into appuser(app_user_id, email, password, mbti_type_id,ufile,mobile,nickname)
+values ( appuser_seq.nextval, '1@1', '1', 1, '1.png','1','nick');
+    
+    delete from appuser;
+    commit;
+    
+    select   u.email, password ,auth
+ 		from     appuser u left join authorities a on u.email = a.email
+ 		where    u.email='1@1';
+        
+        desc appuser;
+        
+        select * from appuser where email='1@1';
+    select password from appuser where email='1@1';
+    
+    update appuser set mbti_type_id=1, ufile='2.png',mobile='1' where app_user_id=62;
+    delete from appuser where app_user_id=62;
+    
+    select * from appuser;
+    commit;
     

@@ -11,6 +11,24 @@
 			<input  type="email" class="form-control" id="email"
 					placeholder="이메일을 입력해주세요" required  name="email">
 			<div class="iddouble_result"></div>	
+			
+			
+			<div class="mb-3 mt-3">
+			<label  for="nickname" class="form-label">Nickname:</label> 
+			<input  type="text" class="form-control" id="nickname"
+					placeholder="닉네임 입력해주세요" required  name="nickname">
+			<div class="iddouble_result"></div>	
+			
+			<div class="mb-3 mt-3">
+			<label  for="mobile" class="form-label">Mobile:</label> 
+			<input  type="text" class="form-control" id="mobile"
+					placeholder="모바일을 입력해주세요" required  name="mobile">
+			<div class="iddouble_result"></div>	
+			
+			
+			
+			
+			
 			<script>
 			$(function(){
 				//1. 대상찾아오기   아이디가 이메일의 값을 찾아오려고함. 

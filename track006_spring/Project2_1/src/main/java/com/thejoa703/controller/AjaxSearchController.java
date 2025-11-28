@@ -15,7 +15,7 @@ import com.thejoa703.service.AppUserService;
 //@Contrller      처리(service) + 화면
 @RestController  //처리(service) + 나온값
 public class AjaxSearchController {
-
+/*
 	@Autowired AppUserService service; 
 	
     @RequestMapping("/iddouble")
@@ -24,7 +24,6 @@ public class AjaxSearchController {
     	result.put("cnt"  , service.iddouble(email));
     	return result;
     }
-    
     /////////////////////////////////////////////
 	//    전체유저정보 selectAll 
 	//    아이디주면 해당 유저정보찾기select  
@@ -70,6 +69,7 @@ public class AjaxSearchController {
     	return result;
     }
      
+    */
 }
  
 
