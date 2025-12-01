@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="308E252D-D121-41E4-2B7B-EEF0FE97AA4B" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="DEPT">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>DEPT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEPTNO" id="140EF4DB-55A4-EB86-AE46-9BD6701D33E4">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>DEPT</sourceObjSchema>
+<sourceObjName>DEPTNO</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DNAME" id="A3283AE4-560D-0A90-778F-690E76F5F38A">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>DEPT</sourceObjSchema>
+<sourceObjName>DNAME</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOC" id="F8F8AA37-0E4F-CCB2-F910-36C1CAB8BFAD">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>DEPT</sourceObjSchema>
+<sourceObjName>LOC</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71F53BF3-CC1D-A17B-A6BA-155513AB36DB" name="PK_DEPT">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>PK_DEPT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="140EF4DB-55A4-EB86-AE46-9BD6701D33E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74B00036-B2D6-4AED-75C8-3BA456D4AEA7" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="PK_DEPT">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>PK_DEPT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:36 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="140EF4DB-55A4-EB86-AE46-9BD6701D33E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

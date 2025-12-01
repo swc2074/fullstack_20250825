@@ -1,0 +1,160 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF4CBCCF-08B6-04C2-3F5F-926AF9E9F20A" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="APPUSER">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>APPUSER</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="APP_USER_ID" id="49843E6F-C863-5036-69E9-B0B8CF18BAE4">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>APP_USER_ID</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="0BAD685F-F4D9-163E-0F2A-5CFC1011449D">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD" id="3A168C85-1BF7-1483-98AA-58A6B27E3DC6">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>PASSWORD</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MBTI_TYPE_ID" id="E2BFBFF2-6A14-6F30-67B3-FEAC12ACC6D1">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>MBTI_TYPE_ID</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="C077732A-DDA0-FE0F-D9B7-9634E30CBF6C">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UFILE" id="92B47364-C2D8-B304-5347-FDC808854517">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>UFILE</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<defaultValue>&apos;thejoa703.png&apos;</defaultValue>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MOBILE" id="0F643A4A-C1C3-783B-60E0-E605B3253A4D">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>MOBILE</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NICKNAME" id="5E1F564A-5367-BFDB-65A4-FEFFE094B78D">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>APPUSER</sourceObjSchema>
+<sourceObjName>NICKNAME</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="25874976-A319-87D4-2F7B-7930FAA5B5F7" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="APPUSER_PK">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SYS_C007010</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49843E6F-C863-5036-69E9-B0B8CF18BAE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECD656E2-ED5C-C077-8017-F549EFB0E6DE" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="APPUSER_EMAIL_UN">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SYS_C007011</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:22 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BAD685F-F4D9-163E-0F2A-5CFC1011449D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

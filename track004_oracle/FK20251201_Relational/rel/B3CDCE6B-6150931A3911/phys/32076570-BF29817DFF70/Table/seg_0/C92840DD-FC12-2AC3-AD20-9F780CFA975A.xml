@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EMP" directorySegmentName="seg_0" id="C92840DD-FC12-2AC3-AD20-9F780CFA975A">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<schemaObject>27090F14-A05A-35B0-79C7-B555EB50308C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>52A96311-3B9B-FBA9-2C12-311B43B07F2D</segment>
+<tableSpace>51751E1E-0837-05E3-302B-1500386BB994</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ENAME" id="287E2095-A240-7678-EA45-23D01E4F0283">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JOB" id="42E53A67-BB93-EC2A-C043-3ECE0348DD7E">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SAL" id="451BA66C-3BBC-2A65-5BD6-9F07381715E5">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPNO" id="7651C63B-CA67-0819-C2FE-636C18911870">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIREDATE" id="CB9EE511-FA71-3933-BFCE-183DFF270B58">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MGR" id="D71C91EC-6D48-0139-183B-C3E47000C65B">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPTNO" id="EB9B4EAD-61FE-024F-D4F3-97D20B83FE5A">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMM" id="F53EC64E-3D7D-A35B-E5E8-9D20710B4DD8">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev11g>

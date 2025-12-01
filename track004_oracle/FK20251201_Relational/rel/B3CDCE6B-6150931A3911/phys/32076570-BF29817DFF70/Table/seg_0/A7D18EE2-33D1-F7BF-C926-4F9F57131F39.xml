@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="DEPT_FK" directorySegmentName="seg_0" id="A7D18EE2-33D1-F7BF-C926-4F9F57131F39">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:33 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<schemaObject>27090F14-A05A-35B0-79C7-B555EB50308C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>52A96311-3B9B-FBA9-2C12-311B43B07F2D</segment>
+<tableSpace>51751E1E-0837-05E3-302B-1500386BB994</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DNAME" id="808C8161-263B-3056-8558-80AAC48E8B8B">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:33 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPTNO" id="C2675C94-C675-4D0E-2A2D-EC4F220B20DD">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:33 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DEPT_FK_PK" id="E16DA915-C73C-232C-535A-E9AD1293C8C9">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:45:34 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<schemaObject>27090F14-A05A-35B0-79C7-B555EB50308C</schemaObject>
+<segment>1B6B55A6-B12D-C240-3965-D17EF9E47FFB</segment>
+<tableSpace>51751E1E-0837-05E3-302B-1500386BB994</tableSpace>
+<indexSegment>1B6B55A6-B12D-C240-3965-D17EF9E47FFB</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

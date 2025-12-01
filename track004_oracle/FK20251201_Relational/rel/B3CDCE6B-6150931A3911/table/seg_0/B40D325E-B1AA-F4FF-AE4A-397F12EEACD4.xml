@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B40D325E-B1AA-F4FF-AE4A-397F12EEACD4" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="POST">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>POST</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="24F481E1-8DFE-97CF-3C34-52616640C20A">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APP_USER_ID" id="666872A0-A363-7A11-99FB-304977EAB420">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>APP_USER_ID</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9CB764DE-582F-1CE9-C10A-5270E3658182" referredColumn="49843E6F-C863-5036-69E9-B0B8CF18BAE4"/>
+</associations>
+</Column>
+<Column name="TITLE" id="68A9C541-377F-CB4D-1817-7074FAA26B00">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>TITLE</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="F47688F5-FA63-6B1B-1E68-0BC1DD16ACBE">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>CONTENT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASS" id="C378E410-E81A-2073-5C82-6F15DFA9043B">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>PASS</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="713DB702-7EB9-21DD-B978-78DC6DAF7EF2">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>sysdate</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HIT" id="C8B62C8F-4F4C-FB82-36D0-AFFEEB5E01EB">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>POST</sourceObjSchema>
+<sourceObjName>HIT</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="86A98FA0-0010-B6F9-9594-ABBBA45821FB" schemaObject="27090F14-A05A-35B0-79C7-B555EB50308C" name="POST_PK">
+<sourceConnName>scott</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SYS_C007016</sourceObjName>
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="24F481E1-8DFE-97CF-3C34-52616640C20A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2911522C-1DDF-7C9A-8A60-BA1FDF515B6B" name="FK_POST_APPUSER">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:46:13 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="666872A0-A363-7A11-99FB-304977EAB420"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

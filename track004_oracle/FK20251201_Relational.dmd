@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="FK20251201_Relational" id="7B106529-F053-5569-CCE1-59FD22D74B45" version="3.5">
+<createdBy>tj-bu-703-22</createdBy>
+<createdTime>2025-12-01 05:34:54 UTC</createdTime>
+<ownerDesignName>FK20251201_Relational</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7B106529-F053-5569-CCE1-59FD22D74B45</designId>
+</OSDM_Design>
