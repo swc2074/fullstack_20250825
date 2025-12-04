@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DisswcDto {
 	private int disno;
+	private int appUserid;
 	private String disname;
 	private String disex;
 	private String kindpet;
@@ -16,5 +17,8 @@ public class DisswcDto {
 	private String mannote;
 	private int bhit;
     private String createdat;
+    private String bip;
+    private String bpass;
+    
 
 }

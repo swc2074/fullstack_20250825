@@ -7,13 +7,12 @@ import com.pawject.dto.Disswc.DisswcDto;
 
 
 
-
+@DisDao
 public interface DiseaseDao {
-	public int insert(DisswcDto dto);
-	public int update(DisswcDto dto);
-	public int delete(int disno);
-//	public List<DisswcDto>   selectAll();
-	
+	public int       insert(DisswcDto dto);
+	public int       update(DisswcDto dto);
+	public int       updateHit(int  disno);
+	public int       delete(int disno);
 	public DisswcDto	     select(int disno);
 	public List<DisswcDto> selectAll(Map<String, Object> params);
 

@@ -1,8 +1,11 @@
 select table_name from user_tables;
 
 alter table disease add createdat date;
+alter table disease add BIP varchar2(100);
 ALTER TABLE disease ADD bhit NUMBER DEFAULT 0;
 commit;
+desc disease;
+select * from disease; 
 
 -- 질환 보드 테이블
 create table DISEASE(
@@ -25,7 +28,8 @@ delete from disease;
 
 
     
-    insert into disease 
+   insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval
     ,'고관절 이형성증 (CHD)'
     ,'대퇴골과 골반 연결 부위 비정상 발달로 통증 및 관절염 유발.'
@@ -34,6 +38,7 @@ delete from disease;
     ,'🚨 OFA/PennHIP 평가: 유전적 소양을 생후 4개월부터 평가하여 관리 방향 설정.');
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '슬개골 탈구 (PL)'
     ,'무릎의 슬개골이 정상 위치에서 벗어남.'
@@ -49,7 +54,8 @@ delete from disease;
     ,'메인쿤 발생률: 20% ∼ 30% 유전적 소인 높음.'
     ,'벽 두께: 좌심실 후벽 및 중격의 두께가 6 mm 이상일 때 진단 (품종별 기준 다름).');
     
-    insert into disease 
+    iinsert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE) 
     values(disno_seq.nextval,
     '추간판 탈출증 (IVDD)'
     ,'척추 디스크 돌출로 신경 압박.'
@@ -58,6 +64,7 @@ delete from disease;
     ,'등급 구분: 5단계 (Grade I ∼ V) 로 구분되며, Grade III 이상은 마비 증상 위험.');
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '기관 허탈 (기관지 붕괴)'
     ,'기관 연골 약화로 기관이 납작하게 좁아짐.'
@@ -68,6 +75,7 @@ delete from disease;
 
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '진행성 망막 위축 (PRA)'
     ,'망막 시세포 점진적 손상으로 실명.'
@@ -77,6 +85,7 @@ delete from disease;
     );
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE) 
     values(disno_seq.nextval,
     '다낭성 신장 질환 (PKD)'
     ,'신장에 낭종(물혹)이 생겨 신부전 유발.'
@@ -87,6 +96,7 @@ delete from disease;
     
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '뇌수두증 (Hydrocephalus)'
     ,'뇌척수액 과다 축적으로 뇌 압박.'
@@ -95,7 +105,8 @@ delete from disease;
     ,'수술 성공률: 션트 수술 성공률은 보고에 따라 **50% ∼ 90%**로 다양.'
     );
     
-    insert into disease 
+   insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '폰 빌레브란트 병 (vWD)'
     ,'혈액 응고 인자 부족으로 출혈 경향.'
@@ -105,6 +116,7 @@ delete from disease;
     );
     
     insert into disease 
+    (DISNO , DISNAME ,DISEX, KINDPET,INFVAL,MANNOTE)
     values(disno_seq.nextval,
     '체리아이 (Cherry Eye)'
     ,'제3안검 눈물샘이 밖으로 돌출.'
@@ -114,6 +126,12 @@ delete from disease;
     );
     
     commit;
+
+ALTER TABLE disease MODIFY infval VARCHAR2(1000);
+ALTER TABLE disease MODIFY CREATEDAT  date default sysdate;
+
+desc disease; 
+
 
 
 -- 1. create (insert)

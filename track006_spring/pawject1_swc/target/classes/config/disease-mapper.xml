@@ -3,11 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pawject.dao.Disswc.DiseaseDao">
-	<!-- 명시적 매핑 <resultMap id="Disease_oxMap" type="Disease_ox"> <result property="oxno" 
-		column="OXNO"/> <result property="disno" column="DISNO"/> <result property="oxquestion" 
-		column="OXQUESTION"/> <result property="oxanswer" column="OXANSWER"/> <result 
-		property="oxcomment" column="OXCOMMENT"/> <result property="oxbhit" column="OXBHIT"/> 
-		<result property="createdat" column="CREATEDAT"/> </resultMap> -->
+
+
+ 		<!-- 명시적 매핑 --> 
+		 <resultMap id="diseaseMap" type="DisswcDto">
+			<result property="disno" column="DISNO" />
+			<result property="disname" column="DISNAME" />
+			<result property="disex" column="DISEX" />
+			<result property="kindpet" column="KINDPET" />
+			<result property="infval" column="INFVAL" />
+			<result property="mannote" column="MANNOTE" />
+			<result property="createdat" column="CREATEDAT" />
+			<result property="bhit" column="BHIT" />
+			<result property="bip" column="BIP" />
+		</resultMap> 
 
 	<insert id="insert" parameterType="DisswcDto">
 
@@ -30,6 +39,13 @@
 		mannote = #{mannote}
 		WHERE disno = #{disno}
 	</update>
+	
+	<update id="updateHit" parameterType="int">
+		UPDATE disease
+		SET
+		bhit = bhit + 1
+		WHERE disno = #{disno}
+	</update>
 
 	<delete id="delete" parameterType="DisswcDto">
 		DELETE FROM disease
@@ -37,7 +53,7 @@
 	</delete>
 
 
-	<select id="selectAll" resultType="com.pawject.dto.Disswc.DisswcDto"
+	<select id="selectAll" resultMap="diseaseMap"
 		parameterType="map">
 		select *
 		from (
@@ -47,6 +63,17 @@
 		) A
 		where A.rnum between #{start} and #{end}
 	</select>
+	
+	<!-- <select id="selectAll" resultType="com.pawject.dto.Disswc.DisswcDto"
+		parameterType="map">
+		select *
+		from (
+		select row_number() over (order by createdat desc) as rnum,
+		disno,disname,disex,kindpet,infval,mannote, bhit, createdat
+		from disease
+		) A
+		where A.rnum between #{start} and #{end}
+	</select> -->
 	
 	 <!-- 
 		<select id="selectAll" resultType="com.pawject.dto.Disswc.DisswcDto" parameterType="map">
@@ -60,12 +87,18 @@
        </select>
  -->
  
- 
-	<select resultType="DisswcDto" id="select"
+ <select resultMap="diseaseMap" id="select"
 			parameterType="int">
 		SELECT *
 		FROM disease
 		WHERE disno = #{disno}
 	</select>
+ 
+	<!-- <select resultType="DisswcDto" id="select"
+			parameterType="int">
+		SELECT *
+		FROM disease
+		WHERE disno = #{disno}
+	</select> -->
 
 </mapper>
