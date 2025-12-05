@@ -87,12 +87,11 @@
        </select>
  -->
  
- <select resultMap="diseaseMap" id="select"
-			parameterType="int">
-		SELECT *
-		FROM disease
-		WHERE disno = #{disno}
-	</select>
+		 <select resultMap="diseaseMap" id="select" parameterType="int">
+			SELECT *
+			FROM disease
+			WHERE disno = #{disno}
+		 </select>
  
 	<!-- <select resultType="DisswcDto" id="select"
 			parameterType="int">
@@ -100,5 +99,12 @@
 		FROM disease
 		WHERE disno = #{disno}
 	</select> -->
+			
+		 <!-- ajax - search -->
+		 <select resultMap = "diseaseMap" id="selectSearch"  parameterType="java.util.HashMap">
+		 	select * from disease where disname like #{search}
+		 </select>
+	
+	
 
 </mapper>

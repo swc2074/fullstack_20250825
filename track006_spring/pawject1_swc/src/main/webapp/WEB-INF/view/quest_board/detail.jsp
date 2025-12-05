@@ -42,7 +42,7 @@
 		    	readonly name="infval">${dto.infval}</textarea>
 		  </div> 
 		  
-		  div class="mb-3">
+		  <div class="mb-3">
 		    <label for="mannote" class="form-label">질환명관련 주의사항:</label>
 		    <textarea class="form-control" id="mannote" placeholder="내용을 입력해주세요"   
 		    	readonly name="mannote">${dto.mannote}</textarea>
@@ -54,10 +54,10 @@
 		  </div>  --%>		  
 		  
 			<div class="mb-3">
-			<a href="${pageContext.request.contextPath}/edit.quest?id=${dto.disno}" class="btn btn-success form-control">글수정</a>
+			<a href="${pageContext.request.contextPath}/edit.quest?disno=${dto.disno}" class="btn btn-success form-control">글수정</a>
 			</div>
 			<div class="mb-3">
-			<a href="${pageContext.request.contextPath}/delete.quest?id=${dto.disno}" class="btn btn-secondary form-control">글삭제</a>
+			<a href="${pageContext.request.contextPath}/delete.quest?disno=${dto.disno}" class="btn btn-secondary form-control">글삭제</a>
 			</div>  
 		  <div class="mb-3">
 		  	<a href="${pageContext.request.contextPath}/list.quest" class="btn btn-primary form-control">목록보기</a>

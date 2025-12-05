@@ -10,10 +10,10 @@
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd">
 	<!-- Step3 mybatis : mapper -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage"        value="com.pawject2.dao"   />
-		<property name="annotationClass"    value="com.pawject2.dao.OXDisDao" />
+		<property name="basePackage"        value="com.pawject.dao.OXDisswc"   />
+		<property name="annotationClass"    value="com.pawject.dao.OXDisswc.OXDisDao" />
 	</bean>
-	<context:component-scan base-package="com.pawject2" />
+	<context:component-scan base-package="com.pawject" />
 	
 	<!-- Step2 mybatis : sql 
 		1.  SqlSessionFactoryBean : SqlSession 객체들을 생성, 관리
@@ -26,7 +26,7 @@
 		<property name="mapperLocations" >
 			<list>
 				<value>classpath:config/test-mapper.xml</value>
-				<value>classpath:config/oxdismapper.xml</value>
+				<value>classpath:config/oxdis-mapper.xml</value>
 				
 			</list>
 		</property>

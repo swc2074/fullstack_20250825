@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DisswcDto {
 	private int disno;
-	private int appUserid;
+	private int appUserId;
 	private String disname;
 	private String disex;
 	private String kindpet;

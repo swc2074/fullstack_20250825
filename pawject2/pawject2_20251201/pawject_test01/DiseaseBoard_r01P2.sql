@@ -3,6 +3,8 @@ select table_name from user_tables;
 alter table disease add createdat date;
 alter table disease add BIP varchar2(100);
 ALTER TABLE disease ADD bhit NUMBER DEFAULT 0;
+alter table disease add (bpass varchar2(250),appUserid number);
+alter table did
 commit;
 desc disease;
 select * from disease; 
@@ -17,7 +19,23 @@ create table DISEASE(
     mannote varchar2(200),
     bhit      NUMBER           NOT NULL,
     createdat   DATE             NOT NULL,
+    bpass   varchar2(250)
     );
+
+CREATE TABLE DISEASE (
+    disno       NUMBER PRIMARY KEY,         -- 글 번호
+    appUserid   NUMBER,                     -- 작성자 ID
+    disname     VARCHAR2(100),              -- 질환명
+    disex       VARCHAR2(500),              -- 질환 설명
+    kindpet     VARCHAR2(100),              -- 반려동물 종류
+    infval      VARCHAR2(100),              -- 질환 관련 수치
+    mannote     VARCHAR2(500),              -- 주의사항
+    bhit        NUMBER DEFAULT 0,           -- 조회수
+    createdat   DATE DEFAULT SYSDATE,       -- 작성일자
+    bip         VARCHAR2(50),               -- 작성자 IP
+    bpass       VARCHAR2(250)               -- 비밀번호
+);
+
 
 create sequence disease_seq;
 select sequence_name from user_sequences;

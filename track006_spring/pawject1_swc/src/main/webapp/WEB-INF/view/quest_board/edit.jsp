@@ -3,8 +3,8 @@
 
   <div class="container card  my-5 p-4">
      <h3 class="card-header"> 반려동물 질환 글 수정</h3>
-  <form action="${pageContext.request.contextPath}/updateEdit.quest"  
-  		method="post"  encType="multipart/form-data"  > 
+  <form action="${pageContext.request.contextPath}/edit.quest"  
+  		method="post"  > 
      <input type="hidden"   name="disno"  value="${dto.disno}">  
           <input  type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
 	  <div class="mb-3 mt-3">

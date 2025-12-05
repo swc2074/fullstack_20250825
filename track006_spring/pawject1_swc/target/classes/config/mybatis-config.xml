@@ -8,4 +8,6 @@
 			<typeAlias type="com.pawject.dto.Disswc.DisswcDto"  alias="DisswcDto"/>
 		</typeAliases>
 		
+		
+		
 </configuration>

@@ -2,6 +2,7 @@ package com.pawject.service.Disswc;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,13 @@ public class DiseaseServiceImpl implements DiseaseService {
 	@Override public DisswcDto select(int disno) { dao.updateHit(disno);  /*조회수올리기*/ return dao.select(disno); }
 	@Override public List<DisswcDto> selectAll(Map<String, Object> params) {  return dao.selectAll(params); }
 
+	
+	/* Search - Ajax */
+	public List<DisswcDto> selectSearch(String keyword){
+		HashMap<String, String> para=new HashMap<>();
+		para.put("search", "%" + keyword + "%");
+		return dao.selectSearch(para);
+	}
 	
 
 }

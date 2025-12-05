@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   
-   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/butten.css">
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/button.css">
   
 </head>
 <body>

@@ -1,4 +1,4 @@
-package com.pawject2.dao;
+package com.pawject.dao.OXDisswc;
 
 @OXDisDao
 public interface TestDao {

@@ -36,10 +36,16 @@ public class TestDis1 {
 	@Ignore @Test public void test2() { System.out.println(ds); }
 	@Ignore @Test public void test3() { System.out.println(Session); }
 	
+	@Test public void test6() throws UnknownHostException{
+		HashMap<String,String> para = new HashMap<>();
+		para.put("search", "%t%");
+		
+		System.out.println(dao.selectSearch(para));
+		
+	}
 	
 	
-	
-	 @Test public void test5()  throws UnknownHostException {
+	 @Ignore @Test public void test5()  throws UnknownHostException {
 		 //5. delete
 //		 DisswcDto  dto = new DisswcDto();
 //		 dto.setDisno(1);

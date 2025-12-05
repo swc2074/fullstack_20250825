@@ -28,21 +28,30 @@
       			<th scope="col">MANNOTE</th>
       			<th scope="col">CREATEDAT</th>
       			<th scope="col">BHIT</th>
+      			<!-- <th scope="col">APPUSERID</th> -->
+      			<!-- <th scope="col">BPASS</th> -->
+      			
       		</tr>	
       	</thead>
       	<tbody>  
-      	<tr><td>${list}</td></tr>
-      	 <%--  <c:forEach  var="dto"  items="${list}"  varStatus="status">  	
+      	<%-- <tr><td>${list}</td></tr> --%>
+      	<%-- <tr><td><a href="${pageContext.request.contextPath}/detail.quest?disno=145">detail</a> --%> 
+      	
+      	 <c:forEach  var="dto"  items="${list}"  varStatus="status">  	
 	  		<tr> 
 	  			<td>${paging.listtotal -((paging.current-1) *10) -status.index} </td>
-	  			<td> <a href="${pageContext.request.contextPath}/detail.quest?id=${dto.id}">
-	  				${dto.btitle}
+	  			<td> <a href="${pageContext.request.contextPath}/detail.quest?disno=${dto.disno}">
+	  				${dto.disname}
 	  			</a> </td>
-	  			<td>${dto.appUserId}</td>
-	  			<td>${dto.createdAt}</td>
+	  			<td>${dto.disex}</td>
+	  			<td>${dto.kindpet}</td>
+	  			<td>${dto.infval}</td>
+	  			<td>${dto.mannote}</td>
+	  			<td>${dto.createdat}</td>
 	  			<td>${dto.bhit}</td>
 	  		 <tr>
-	  	  </c:forEach>  --%> 
+	  	  </c:forEach>
+	  	  
       	</tbody>
       	<tfoot>
         	  <tr><td colspan="5"><ul class="pagination  justify-content-center"> 
@@ -118,7 +127,8 @@
 		  $("#search").on("keyup" , function(){    // keyup (키보드뗐을때)
 				console.log( $(this).val().trim()  ); 
 				let keyword = $(this).val().trim();
-				/////////////////////////////////////////////
+				
+			/////////////////////////////////////////////
 				if(keyword ===""){ //빈칸일때
 					$("#resultArea  tbody")
 					.empty()
@@ -134,18 +144,23 @@
 							$.each( res , function( index, dto  ){ 
 								let row = "<tr>"
 								+"<td>"+(res.length-index)+"</td>"
-								+"<td><a href='${pageContext.request.contextPath}/detail.quest?id="+dto.id+"'>"
-								+dto.btitle+"</a></td>"
-								+"<td>"+dto.appUserId+"</td>"
-								+"<td>"+dto.createdAt+"</td>"
+								+"<td><a href='${pageContext.request.contextPath}/detail.quest?disno="+dto.disno+"'>"
+								+dto.disname+"</a></td>"
+								+"<td>"+dto.disex+"</td>"
+								+"<td>"+dto.kindpet+"</td>"
+								+"<td>"+dto.infval+"</td>"
+								+"<td>"+dto.mannote+"</td>"
+								+"<td>"+dto.createdat+"</td>"
 								+"<td>"+dto.bhit+"</td>"
 								+"</tr>";
 								$("#resultArea  tbody").append(row);
+								
+								
 							});
 						}
 					});
 				} 
-				/////////////////////////////////////////////
+				///////////////////////////////////////////// 
 		  });
 	  });
 	  </script>	

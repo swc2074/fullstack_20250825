@@ -1,9 +1,9 @@
-package com.pawject2.dto;
+package com.pawject.dto.OXDisswc;
 
 import lombok.Data;
 
 @Data
-public class Disease_ox {
+public class OXDisDto {
     private int oxno;
     private int disno;
     private String oxquestion;

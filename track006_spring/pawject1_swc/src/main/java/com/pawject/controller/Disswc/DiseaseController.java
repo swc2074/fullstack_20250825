@@ -44,23 +44,24 @@ public class DiseaseController {
 	}
 	 
 	@RequestMapping("/detail.quest") //상세보기
-	public String detail() { 
-		//model.addAttribute("dto", service.select(id));
+	public String detail(int disno, Model model) { 
+		model.addAttribute("dto", service.select(disno));
 		return "quest_board/detail"; 
 	}
 	
 	@RequestMapping(value="/edit.quest" , method=RequestMethod.GET)  //수정폼
-	public String edit_get() {
-		//model.addAttribute("dto", service.selectUpdateForm(id));
+	public String edit_get(int disno, Model model) {
+		model.addAttribute("dto", service.selectUpdateForm(disno));
 		return "quest_board/edit"; 
 	}
 	
 	@RequestMapping(value="/edit.quest" , method=RequestMethod.POST) //수정기능
-	public String edit_post(    RedirectAttributes rttr) { 
+	public String edit_post( DisswcDto dto,   RedirectAttributes rttr) { 
+		System.out.println("......... edit.quest" + dto );
 		String result = "비밀번호를 확인해주세요";
-		//if( service.update(dto)  > 0  ) {  result ="수정 성공"; }
+		if( service.update(dto)  > 0  ) {  result ="수정 성공"; }
 		rttr.addFlashAttribute("success" , result);
-		return "redirect:/detail.quest"; //+ dto.getId(); 
+		return "redirect:/detail.quest?disno=" + dto.getDisno(); 
 	
 	}
 	//Q1. 수정기능도    비밀번호를 확인해주세요 알림창 + /detail.quest  경로넘기기
@@ -69,9 +70,9 @@ public class DiseaseController {
 	public String delete_get() { return "quest_board/delete"; }
 	
 	@RequestMapping(value="/delete.quest" , method=RequestMethod.POST) //삭제기능
-	public String delete_post( RedirectAttributes rttr) { 
+	public String delete_post(DisswcDto dto, RedirectAttributes rttr) { 
 		String result = "비밀번호를 확인해주세요";
-		//if( service.delete(dto)  > 0  ) {  result ="삭제 성공"; }
+		if( service.delete(dto.getDisno())  > 0  ) {  result ="삭제 성공"; }
 		rttr.addFlashAttribute("success" , result);
 		return "redirect:/list.quest"; 
 	

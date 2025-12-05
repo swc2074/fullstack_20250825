@@ -14,5 +14,6 @@ public interface DiseaseService {
 	public List<DisswcDto> selectAll(Map<String, Object> params);
 	public DisswcDto	     selectUpdateForm(int disno);
 	
-	
+	/* Search - Ajax */
+	public List<DisswcDto> selectSearch(String keyword);
 }

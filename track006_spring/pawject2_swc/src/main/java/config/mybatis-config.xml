@@ -4,6 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration> 
 		<typeAliases>
-			<typeAlias type="com.pawject2.dto.Disease_ox"  alias="Disease_ox"/>
+			<typeAlias type="com.pawject.dto.OXDisswc.OXDis"  alias="OXDis"/>
 		</typeAliases>
 </configuration>
