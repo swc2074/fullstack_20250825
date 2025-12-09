@@ -4,7 +4,8 @@ alter table disease add createdat date;
 alter table disease add BIP varchar2(100);
 ALTER TABLE disease ADD bhit NUMBER DEFAULT 0;
 alter table disease add (bpass varchar2(250),appUserid number);
-alter table did
+ALTER TABLE disease MODIFY disname VARCHAR2(1000);
+
 commit;
 desc disease;
 select * from disease; 
