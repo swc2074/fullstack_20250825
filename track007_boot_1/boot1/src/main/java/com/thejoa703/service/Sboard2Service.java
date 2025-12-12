@@ -19,5 +19,9 @@ public interface Sboard2Service {
 	/*paging*/
 	public List<Sboard2Dto>  select10(int pageNo);
 	public int               selectTotalCnt();
+	
+	/*paging*/
+	public List<Sboard2Dto>  select3(String keyword , int pageNo);
+	public int               selectSearchTotalCnt(String keyword);
 
 }

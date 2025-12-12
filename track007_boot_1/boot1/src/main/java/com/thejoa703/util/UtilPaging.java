@@ -17,7 +17,14 @@ public class UtilPaging {
 	   private  int start;        //하단에 페이지수 이전   [11]
 	   private  int end;   		// 하단에 페이지수  이전   [20]
 	   
+	   //## 기본생성자 (10개씩, 하단 네비블록 10개)
 	   public UtilPaging(int listtotal, int pageNo) {
+		   this(listtotal, pageNo, 10,10);
+	   }
+		
+	   
+	   //## 오버로딩된 생성자(페이지 크기와 하단네비크기를 직접지정)
+	   public UtilPaging(int listtotal, int pageNo ,int onepagelist, int bottomlist) {
 		  
 		   this.listtotal= (listtotal <= 0)? 1: listtotal;
 		   this.onepagelist=10;
@@ -31,6 +38,10 @@ public class UtilPaging {
 		   // 30 -> (30-1)/10 -> 앞자리 2로   *10+1
 		   this.end     = start + bottomlist-1;
 		   if(end>pagetotal) {end=pagetotal; } //30>26 마지막은 26번으로 
+		   
+		   
+		   //조회 시작번호
+		   this.pstartno = (pageNo -1 ) * onepagelist +1;
 		   
 	   }
 	

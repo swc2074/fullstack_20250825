@@ -34,12 +34,15 @@ class Boot1ApplicationTests {
 		System.out.println("............................" + dao.select10(para));
 		
 		System.out.println("............................" + dao.selectTotalCnt());
-		
+		//3. 검색어 + 3개씩 가져오기
 		HashMap<String, Object> para2 = new HashMap<>();
 		para2.put("start","1");
 		para2.put("start",1);
 		para2.put("end",3);
 		System.out.println("............................" + dao.select3(para2));
+		
+		//4. 검색어 + 3개씩 가져오기
+		System.out.println("............................." + dao.selectSearchTotalCnt("t"));
 		
 		
 	}

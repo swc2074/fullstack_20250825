@@ -19,6 +19,7 @@ public interface Sboard2Dao {
 	public List<Sboard2Dto>  select10(HashMap<String,Integer> para);
 	public int               selectTotalCnt();
 	public List<Sboard2Dto>  select3(HashMap<String,Object> para);
+	public int               selectSearchTotalCnt(String search);
 	
 
 }
