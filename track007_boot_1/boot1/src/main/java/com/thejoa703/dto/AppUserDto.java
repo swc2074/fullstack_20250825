@@ -1,8 +1,12 @@
 package com.thejoa703.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AppUserDto {
 	private int appUserId;  //pk
 	private String email;   //이메일 
@@ -14,5 +18,12 @@ public class AppUserDto {
 	private String nickname;
 	private String provider;    //google,kakao, naver, local
 	private String providerId;	//각provider의 고유 id
+	public AppUserDto(String email, String provider) {
+		super();
+		this.email = email;
+		this.provider = provider;
+	}
+	
+	
 
 }

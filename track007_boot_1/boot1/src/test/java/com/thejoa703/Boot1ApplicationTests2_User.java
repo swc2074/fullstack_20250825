@@ -1,20 +1,94 @@
 package com.thejoa703;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.UUID;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.mock.web.MockMultipartFile;
 
 import com.thejoa703.dao.AppUserDao;
+import com.thejoa703.dto.AppUserAuthDto;
 import com.thejoa703.dto.AppUserDto;
 import com.thejoa703.dto.AuthDto;
+import com.thejoa703.service.AppUserService;
 
 @SpringBootTest
-@Transactional   // 테스트 실행중 발행 db변경 자동 롤백
+//@Transactional   // 테스트 실행중 발행 db변경 자동 롤백
 class Boot1ApplicationTests2_User {
 	@Autowired AppUserDao dao;
+	@Autowired AppUserService service;
 	
 	@Test
+	public void testService() {
+		String email= UUID.randomUUID().toString() + "@test.com";
+		//1. 회원가입
+		AppUserDto user = new AppUserDto();
+		user.setEmail(email);
+		user.setPassword("pw123");
+		user.setMobile("01012345678");
+		user.setNickname("nickname");
+		user.setProvider("local");
+		user.setProviderId("local_" + UUID.randomUUID());
+		
+		MockMultipartFile file = new MockMultipartFile("file", "text.txt","text/plain", "data".getBytes());
+		int insertReult = service.insert(file,user);
+		assertEquals(1,insertReult);
+
+	
+		//2. 로그인 테스트(readAuth) + 마이페이지
+		// 2-1. 로그인
+		
+		AppUserAuthDto login = service.readAuth(email, "local");
+		assertNotNull(login);
+		assertEquals(email, login.getEmail());
+		assertTrue(login.getAuthList().stream().anyMatch(a -> "ROLE_MEMBER".equals(a.getAuth())));
+	
+		//2-2. 마이페이지
+		AppUserDto mypage = service.selectEmail(email,"local");
+		assertNotNull(mypage);
+		assertEquals("nickname",mypage.getNickname());
+		
+		//3. 업데이트
+		AppUserDto updateDto = new AppUserDto();
+		updateDto.setEmail(email);
+		updateDto.setPassword("pw123");
+		updateDto.setNickname("newNickname");
+		updateDto.setProvider("local");
+		
+		int updateResult = service.update(null, updateDto);
+		assertEquals(1,updateResult);
+		
+		AppUserDto updatedUser = service.selectEmail(email, "local");
+		assertEquals("newNickname", updatedUser.getNickname());
+		
+		
+		//4. 유저삭제
+		AppUserDto deleteDto = new AppUserDto();
+		deleteDto.setEmail(email);
+		deleteDto.setPassword("pw123");
+		deleteDto.setProvider("local");
+		
+		int deleteResult = service.delete(deleteDto, true);
+		assertEquals(1,deleteResult);
+		assertNull(service.selectEmail(email, "local"));
+		
+		
+			
+
+	}//  end of testService
+	
+	
+	
+	
+	
+	@Disabled @Test
 	public void testCrudAppUserAuth() {
 		//1. 회원가입 - 사용자입력
 		AppUserDto user = new AppUserDto();
@@ -24,7 +98,10 @@ class Boot1ApplicationTests2_User {
 		user.setProviderId("local_001");
 		int result = dao.insertAppUser(user);
 //		int createdId = user.getAppUserId();
-		System.out.println("................1" + result);
+		System.out.println("................1" + result); // 수동확인
+		assertEquals(1,result);  //회원가입성공확인 (자동확인)
+		// 
+		
 		//2.        - 권한입력
 		AuthDto auth = new AuthDto();
 		auth.setAppUserId(0);
@@ -32,17 +109,22 @@ class Boot1ApplicationTests2_User {
 		auth.setAuth("ROLE_USER");
 		int result_auth = dao.insertAuth(auth);
 		System.out.println("....................2" + result_auth);
+		assertEquals(1, result_auth); // 권한입력 (자동확인)
 		//auth.setAppUserId(0);
 		
 		//3. 로그인
 		AppUserDto login = new AppUserDto();
 		login.setEmail("1@1"); login.setProvider("local");
 		System.out.println("...............3" + dao.readAuthByEmail(login));
+		assertNotNull(dao.readAuthByEmail(login));  // NotNull
+//		import static org.junit.jupiter.api.Assertions.assertNotNull;
 		
 		//4. 아이디중복
 		AppUserDto iddouble = new AppUserDto();
 		iddouble.setEmail("1@1"); iddouble.setProvider("local");
 		System.out.println("...............4" + dao.iddoubleByEmail(iddouble));
+		assertTrue( dao.iddoubleByEmail(iddouble) >0 );
+//		import static org.junit.jupiter.api.Assertions.assertTrue;
 		
 		//5. 마이페이지
 		AppUserDto mypage = new AppUserDto();
@@ -50,22 +132,34 @@ class Boot1ApplicationTests2_User {
 		AppUserDto findUser = dao.findByEmail(mypage);
 		int id = findUser.getAppUserId();
 		System.out.println("...............5" + findUser);
+		assertNotNull(findUser); //## return - 객체
 		
 		
 		//6. 수정
 		AppUserDto update = new AppUserDto();
 		update.setNickname("nickname001"); update.setAppUserId(id);
-		System.out.println("...............6" + dao.updateAppUser(update));
+		int updateResult = dao.updateAppUser(update);
+		System.out.println("...............6" + updateResult);
+//		System.out.println("...............6" + dao.updateAppUser(update)); // ## int 했다, 안했다.
+		assertEquals(1,updateResult);
 		
 		//7. 사용자삭제
 		
 		AppUserDto delete = new AppUserDto();
 		 delete.setAppUserId(id);
-		System.out.println("...............7" + dao.deleteAppUser(delete));
+		 int deleteResult = dao.deleteAppUser(delete);
+		 System.out.println("...............7" + deleteResult);
+//		System.out.println("...............7" + dao.deleteAppUser(delete));
+		assertEquals(1, deleteResult);
+		assertNull(dao.findByEmail(mypage));
+		
 		//8. 권한 삭제
 		AuthDto dauth = new AuthDto();
 		dauth.setEmail("1@1");
-		System.out.println("...............8" + dao.deleteAuth(dauth));
+		int deleteAuthResult = dao.deleteAuth(dauth);
+		System.out.println("...............8" + deleteAuthResult);
+//		System.out.println("...............8" + dao.deleteAuth(dauth));
+		assertEquals(1,deleteAuthResult);
 		
 	}
 	
