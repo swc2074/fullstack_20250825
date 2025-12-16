@@ -9,9 +9,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.thejoa703.oauth.Oauth2IUserService;
+
+import lombok.RequiredArgsConstructor;
+
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
+	
+	private final Oauth2IUserService oauth2IUserService;
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -29,7 +36,7 @@ public class SecurityConfig {
 		
 		/* 2. 로그인처리 */
 		.formLogin( form -> form
-				.loginPage("/user/login") // <- 로그인폼
+				.loginPage("/users/login") // <- 로그인폼
 				.loginProcessingUrl("/users/loginProc") // <-로고인 경로
 				.defaultSuccessUrl("/users/mypage", true)// 로고인 성공시 경로
 				.failureUrl("/users/fail") // 로그인 실패시 경로
@@ -45,6 +52,11 @@ public class SecurityConfig {
 				.permitAll()
 				
 				
+				)
+		.oauth2Login(oauth2 -> oauth2
+				.loginPage("/users/login")
+				.defaultSuccessUrl("/users/mypage", true)
+				.userInfoEndpoint(userInfo -> userInfo.userService(oauth2IUserService))
 				)
 		/* 4. csrf 예외처리 */	
 		.csrf( csrf -> csrf.ignoringAntMatchers("/users/join" , "/users/update", "/users/delete"));
