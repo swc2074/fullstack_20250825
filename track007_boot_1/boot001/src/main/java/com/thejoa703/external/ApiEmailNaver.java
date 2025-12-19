@@ -26,6 +26,8 @@ public class ApiEmailNaver {
 	
 	public void sendMail(String subject, String content , String email) { 
 		
+		
+		
 		//2. 받는사람
 		String to   = email;
 		
