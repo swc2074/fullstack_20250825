@@ -73,7 +73,13 @@ public class ApiController {
 	public String sms_api(@RequestParam String to ) throws CoolsmsException {
 		return apiCoolSms.phoneNumber(to);
 	}
+	///////////////////////////////Postcode
+	@GetMapping("/postcode")
+	public String postcode() {return "external/postcode";}
 	
+	///////////////////////////////Maps
+	@GetMapping("/maps")
+	public String maps() {return "external/navermap";}
 	
 } 
 
