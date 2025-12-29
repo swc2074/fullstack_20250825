@@ -9,9 +9,9 @@
 </head>
 <body>
 	<div layout:fragment="content">
-      <h3 class="card-header"> MBTI 글삭제</h3> 
+      <h3 class="card-header"> 질환 글삭제</h3> 
 	  <form th:action="@{/board/delete}"  method="post">  
-	      <input type="hidden"   name="id"  th:value="${param.id}"> 
+	      <input type="hidden"   name="disno"  th:value="${param.disno}"> 
 		  <div class="my-3">
 		    <label for="bpass" class="form-label">PASS:</label>
 		    <input type="password" class="form-control" 
