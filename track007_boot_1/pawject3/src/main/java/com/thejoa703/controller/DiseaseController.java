@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.thejoa703.dto.Sboard2Dto;
-import com.thejoa703.service.Sboard2Service;
+
+import com.thejoa703.dto.Disswc.DisswcDto;
+import com.thejoa703.service.DiseaseService;
 import com.thejoa703.util.UtilPaging;
 
 @Controller
 @RequestMapping("/board")   // 공통 prefix
-public class Sboard2Controller {
+public class DiseaseController {
 	
-	@Autowired private Sboard2Service service;
+	@Autowired private DiseaseService service;
 	//    /board/list
 	//	@GetMapping("/list")
 	//	public String list(Model model) {
@@ -31,7 +32,8 @@ public class Sboard2Controller {
 	//	}
 	
 	@GetMapping("/list")
-	public String list(Model model , @RequestParam(value="pageNo" , defaultValue="1")  int pageNo) {
+	public String list(Model model ,
+			@RequestParam(value="pageNo" , defaultValue="1")  int pageNo) {
 		model.addAttribute("paging" , new UtilPaging( service.selectTotalCnt()  , pageNo));  // 화면용계산 이전-1,2,3-다음
 		model.addAttribute("list", service.select10(pageNo));  //처리- 게시글10개 가져오기
 		return "board/list"; // 화면
@@ -61,9 +63,9 @@ public class Sboard2Controller {
 	
 	//    /board/write (글쓰기 기능)
 	@PostMapping("/write") public String write_post(
-			MultipartFile file ,Sboard2Dto dto  , RedirectAttributes rttr) {
+			MultipartFile file ,DisswcDto dto  , RedirectAttributes rttr) {
 		String result ="글쓰기 실패";
-		if(service.insert(file, dto) > 0) { result="글쓰기 성공!";}
+		if(service.insert( dto) > 0) { result="글쓰기 성공!";}
 		rttr.addFlashAttribute("success" , result);
 		return "redirect:/board/list";
 	} 
@@ -85,11 +87,11 @@ public class Sboard2Controller {
 	//    /board/edit   (수정기능)
 	@PostMapping("/edit") 
 	public String edit_post(
-			MultipartFile file ,Sboard2Dto dto  , RedirectAttributes rttr) {
+			DisswcDto dto  , RedirectAttributes rttr) {
 		String result ="글수정 실패";
-		if(service.update(file, dto) > 0) { result="글수정 성공!";}
+		if(service.update(dto) > 0) { result="글수정 성공!";}
 		rttr.addFlashAttribute("success" , result);
-		return "redirect:/board/detail?id=" + dto.getId();
+		return "redirect:/board/detail?disno=" + dto.getDisno();
 	} 	
 	//    /board/delete (삭제폼)
 	@GetMapping("/delete")
@@ -98,9 +100,9 @@ public class Sboard2Controller {
 	}
 	//    /board/delete (삭제기능) 
 	@PostMapping("/delete") 
-	public String delete_post( Sboard2Dto dto  , RedirectAttributes rttr) {
+	public String delete_post( DisswcDto dto  , RedirectAttributes rttr) {
 		String result ="글삭제 실패";
-		if(service.delete(dto) > 0) { result="글삭제 성공!";}
+		if(service.delete(dto.getDisno()) > 0) { result="글삭제 성공!";}
 		rttr.addFlashAttribute("success" , result);
 		return "redirect:/board/list";
 	} 

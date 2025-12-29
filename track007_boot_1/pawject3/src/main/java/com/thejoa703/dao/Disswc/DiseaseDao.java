@@ -1,26 +1,35 @@
-package com.thejoa703.service;
+package com.thejoa703.dao.Disswc;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import org.springframework.web.multipart.MultipartFile;
+import org.apache.ibatis.annotations.Mapper;
 
-import com.thejoa703.dto.Sboard2Dto;
- 
-public interface Sboard2Service {
-	public int insert(MultipartFile file , Sboard2Dto dto);
-	public int update(MultipartFile file , Sboard2Dto dto);
-	public int delete(Sboard2Dto dto);
-	public List<Sboard2Dto>  selectAll();
-	public Sboard2Dto        select(int id);  //조회수올리기 + 상세보기
-	public Sboard2Dto        selectUpdateForm(int id);  //수정하기폼
+import com.thejoa703.dto.Disswc.DisswcDto;
+
+@Mapper
+public interface DiseaseDao {
+	public int       insert(DisswcDto dto);
+	public int       update(DisswcDto dto);
+	public int       updateHit(int  disno);
+	public int       delete(int disno);
+	public DisswcDto	     select(int disno);
+	public List<DisswcDto> selectAll(Map<String, Object> params);
 	
-	/* Paging */
-	public List<Sboard2Dto> select10(int pageNo);
-	public int  selectTotalCnt();
+	/*Ajax*/
+//	public List<DisswcDto>  selectSearch( HashMap<String, String> para);
+	  List<DisswcDto> select3(Map<String,Object> params);
+	    int selectSearchTotalCnt(String keyword);
+
 	
-	/* Paging + Search */
-	public List<Sboard2Dto>  select3( String keyword ,int pageNo);
-	public int  selectSearchTotalCnt( String keyword );
+	
+	
+	/*Paging*/
+	public List<DisswcDto> select10(HashMap<String,Object> para);
+	public int selectTotalCnt();
+	 
+            
 }
 
 

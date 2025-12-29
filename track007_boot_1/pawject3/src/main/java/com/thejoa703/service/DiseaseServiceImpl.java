@@ -1,54 +1,46 @@
 package com.thejoa703.service;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.thejoa703.dao.Sboard2Dao;
-import com.thejoa703.dto.Sboard2Dto;
-import com.thejoa703.util.UtilUpload;
+import com.thejoa703.dao.Disswc.DiseaseDao;
+import com.thejoa703.dto.Disswc.DisswcDto;
 
 @Service
-public class Sboard2ServiceImpl implements Sboard2Service { 
-	@Autowired Sboard2Dao  dao;
-	@Autowired UtilUpload  upload;
+public class DiseaseServiceImpl implements DiseaseService { 
+	@Autowired DiseaseDao  dao;
+	
 
-	@Override public int insert(MultipartFile file, Sboard2Dto dto) { 
-		if(!file.isEmpty()) {
-			try { dto.setBfile(  upload.fileUpload(file)  ); }
-			catch (IOException e) { e.printStackTrace(); }
-		}
+	@Override public int insert( DisswcDto dto) { 
+	
 		try { dto.setBip( InetAddress.getLocalHost().getHostAddress() ); }
 		catch (UnknownHostException e) { e.printStackTrace(); }
 		return dao.insert(dto); 
 	}
 	
-	@Override public int update(MultipartFile file, Sboard2Dto dto) {
-		if(!file.isEmpty()) {
-			try { dto.setBfile(  upload.fileUpload(file)  ); }
-			catch (IOException e) { e.printStackTrace(); }
-		}
+	@Override public int update( DisswcDto dto) {
+		
 		return dao.update(dto); 
 	}
 	
-	@Override public int delete(Sboard2Dto dto) { return dao.delete(dto); }
+	@Override public int delete(int disno) { return dao.delete(disno); }
 	
-	@Override public List<Sboard2Dto> selectAll() { return dao.selectAll(); }
+	@Override public List<DisswcDto> selectAll(Map<String, Object> params) { return dao.selectAll(params); }
 	@Transactional
-	@Override public Sboard2Dto select(int id) { dao.updateHit(id);  return dao.select(id); }
-	@Override public Sboard2Dto selectUpdateForm(int id) { return dao.select(id); }
+	@Override public DisswcDto select(int disno) { dao.updateHit(disno);  return dao.select(disno); }
+	@Override public DisswcDto selectUpdateForm(int disno) { return dao.select(disno); }
 
 	/* paging */
 	@Override
-	public List<Sboard2Dto> select10(int pageNo) {  //(1)1,10 , (2) 11,20 (3) 21,30
-		HashMap<String,Integer>   para = new HashMap<>();
+	public List<DisswcDto> select10(int pageNo) {  //(1)1,10 , (2) 11,20 (3) 21,30
+		HashMap<String,Object>   para = new HashMap<>();
 		int start = (pageNo-1)*10 + 1;  //(1)1    (2)11  (2)21
 		int end   = start + 9;
 		
@@ -61,7 +53,7 @@ public class Sboard2ServiceImpl implements Sboard2Service {
 	
 	/* Paging + Search */
 	@Override
-	public List<Sboard2Dto> select3(String keyword, int pageNo) {
+	public List<DisswcDto> select3(String keyword, int pageNo) {
 		HashMap<String, Object> para = new HashMap<>();
 		//  11-1 (10/10 = 1) 20-1(19/10 = 1)
 		int pageSize=3; //3개씩의 페이지

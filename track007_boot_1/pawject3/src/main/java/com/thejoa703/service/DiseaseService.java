@@ -1,24 +1,25 @@
-package com.thejoa703.dao;
+package com.thejoa703.service;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import org.apache.ibatis.annotations.Mapper;
-
-import com.thejoa703.dto.Sboard2Dto;
-
-@Mapper
-public interface Sboard2Dao {
-	public int insert(Sboard2Dto dto);
-	public int update(Sboard2Dto dto);
-	public int updateHit(int id);
-	public int delete(Sboard2Dto dto);
-	public List<Sboard2Dto>  selectAll();
-	public Sboard2Dto        select(int id);
-	public List<Sboard2Dto>  select10(HashMap<String,Integer> para);
-	public int               selectTotalCnt();
-	public List<Sboard2Dto>  select3(  HashMap<String,Object> para);  //##
-	public int               selectSearchTotalCnt(String search);//##
+import com.thejoa703.dto.Disswc.DisswcDto;
+ 
+public interface DiseaseService {
+	public int insert(DisswcDto dto);
+	public int update( DisswcDto dto);
+	public int delete(int disno);
+	public List<DisswcDto>  selectAll(Map<String, Object> params);
+	public DisswcDto        select(int disno);  //조회수올리기 + 상세보기
+	public DisswcDto        selectUpdateForm(int disno);  //수정하기폼
+	
+	/* Paging */
+	public List<DisswcDto> select10(int pageNo);
+	public int  selectTotalCnt();
+	
+	/* Paging + Search */
+	public List<DisswcDto>  select3( String keyword ,int pageNo);
+	public int  selectSearchTotalCnt( String keyword );
 }
 
 
