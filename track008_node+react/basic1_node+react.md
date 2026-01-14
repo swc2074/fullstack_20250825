@@ -319,3 +319,32 @@ Image
 ```
 Long id, String src, Post post;
 ```
+```
+2. 레파지토리
+[com.thejoa703.repository]
+- [x] 1. AppUserRepository
+- [ ] 2. PostRepository
+- [ ] 3. ImageRepository
+- [ ] 4. HashtagRepository
+- [ ] 5. CommentRepository
+- [ ] 6. FollowRepository
+- [ ] 7. RetweetRepository
+- [ ] 8. PostLikeRepository
+
+```
+@Repository
+public interface AppUserRepository extends JpaRepository<AppUser, Long>{//Entity, PK
+}
+
+
+CREAT: save - INSERT INTO appuser (컬럼1, 컬럼2,,) values (?,?,,)
+READ : findAll - select * appuser 
+       findById - select * from appuser where id=?
+UPDATE: save - update appuser  set 컬럼1=? , 컬럼2=? where id=?
+DELETE: deleteById - delete from appuser where id=?
+```
+            사용자    관리자
+create      ◎회원가입   ◎회원가입
+read        로그인, 이메일중복, 닉네임중복, (페이징이 들어간 유저조회)
+update      ◎닉네임수정, ◎이미지수정
+delete      ◎회원탈퇴
