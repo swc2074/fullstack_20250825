@@ -316,9 +316,8 @@ LocalDateTime createdAt;  LocalDateTime updatedAt;
 ```
 
 Image
-```
 Long id, String src, Post post;
-```
+
 ```
 2. 레파지토리
 [com.thejoa703.repository]
@@ -348,3 +347,30 @@ create      ◎회원가입   ◎회원가입
 read        로그인, 이메일중복, 닉네임중복, (페이징이 들어간 유저조회)
 update      ◎닉네임수정, ◎이미지수정
 delete      ◎회원탈퇴
+
+```
+```
+3. mybatis
+- [ ] 1. build.gradle
+- [ ] 2. application.yml
+- [ ] 3. [com.thejoa703.domain] - DeptUser  @Entity
+- [ ] 4. [com.thejoa703.mapper] - @Mapper ( 복잡한 SQL) / 기본CRUD @Repository(save, findById, findAll, deleteById)
+- [ ] 5. [com.thejoa703.service] - DeptService
+- [ ] 6. [com.thejoa703.controller] - DeptController
+```
+```
+4. service
+
+- [x] 1. dto - requestDto / responseDto
+- [x] 2. UTIL : 이미지업로드
+      - application.yml 이미지설정
+      - service 작성
+- [ ] 3. UTIL : 암호화
+- [ ] 4. AppUserService  <유저>
+- [ ] 5. PostService     <게시글>
+- [ ] 6. Etc Service
+
+
+
+```
+5. security + jwt + redis + oauth2.0
