@@ -1,42 +1,49 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe         # Oracle XE 접속 URL
-    username: scott                                  # DB 사용자명
-    password: tiger                                  # DB 비밀번호
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
-    hikari:                                   
-      maximum-pool-size: 10                 
-      minimum-idle: 5                          
-      idle-timeout: 30000                    
-      connection-timeout: 30000                
-      pool-name: HikariPool                  
 
   jpa:
     hibernate:
-      ddl-auto: create-drop        # 테스트 : create-drop , 운영 : update , validate권장               
-    show-sql: true                           
+      ddl-auto: update   # dev 환경에서는 update, test 환경에서는 create-drop 권장
     properties:
       hibernate:
-        format_sql: true                     
-        dialect: org.hibernate.dialect.OracleDialect  
+        format_sql: true
+        show_sql: true
 
   servlet:
-    multipart:            # 파일 업로드 설정
+    multipart:
       enabled: true
       max-file-size: 10MB
       max-request-size: 20MB      
 
- 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000
 
-# Mybatis
+  config:
+    import: optional:application-oauth.yml
+
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: com.thejoa703.domain
+  type-aliases-package: com.thejoa703.domain 
 
-file:                    #파일 업로드 디렉토리 설정
+jwt:
+  issuer: thejoa703
+  secret: ${JWT_SECRET}
+  access-token-exp-seconds: 900       # 15분
+  refresh-token-exp-seconds: 1209600  # 14일
+  header: Authorization
+  prefix: Bearer
+
+file:
   upload-dir: uploads
 
-#server:         서버 포트 설정        
-#  port: 8484
+server:
+  port: 8484
 
