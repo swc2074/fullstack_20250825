@@ -520,3 +520,101 @@ get  저장이름
     >> AuthUserJwtService [공통]
 2. controller
     >> 각각의 컨트롤러에서
+
+
+    1. front 폴더 만들기 / 프로젝트 만들기  
+```js
+cd  front
+npm init
+```
+
+2. 프로그램설치
+```js
+package.json 프로젝트안에 넣기
+npm install
+```
+
+```
+front/
+├── .next/                  # ✅ Next.js 빌드 결과물 (자동 생성, 배포 시 사용)
+├── components/             # ✅ 재사용 가능한 UI 컴포넌트 폴더
+│   └── Layout.js           # 페이지 공통 레이아웃 컴포넌트
+├── node_modules/           # ✅ 설치된 npm 패키지들
+├── pages/                  # ✅ Next.js 라우팅 기반 페이지 폴더
+│   ├── _app.js             # 전체 앱의 공통 설정 (Redux Provider, 글로벌 스타일 등)
+│   └── index.js            # 메인 페이지
+├── reducers/               # ✅ Redux 리듀서 폴더
+│   ├── index.js            # 루트 리듀서 (combineReducers)
+│   ├── user.js             # 사용자 관련 리듀서
+│   └── user.test.js        # 리듀서 테스트 코드
+├── sagas/                  # ✅ Redux-Saga 폴더
+│   ├── index.js            # 루트 사가
+│   ├── user.js             # 사용자 관련 사가
+│   └── user.test.js        # 사가 테스트 코드
+├── store/                  # ✅ Redux 스토어 설정 폴더
+│   ├── configureStore.js   # Redux 스토어 설정
+│   └── configureStore.test.js # 스토어 테스트 코드
+├── styles/                 # ✅ CSS 스타일 폴더
+│   └── globals.css         # 글로벌 스타일
+├── .babelrc                # Babel 설정 파일
+├── .eslintrc               # ESLint 설정 파일
+├── package-lock.json       # npm 의존성 잠금 파일
+├── package.json            # 프로젝트 메타 정보 및 의존성
+└── setupTests.js           # 테스트 환경 설정 파일
+
+4. 개발 - reducer → saga→ store
+front/reducers/
+ ┣ authReducer.js
+ ┣ postReducer.js
+ ┣ commentReducer.js
+ ┣ followReducer.js
+ ┣ likeReducer.js
+ ┣ retweetReducer.js
+ ┗ index.js   → combineReducers
+
+
+ ### 핵심 3가지 다시 점검
+
+1. Refresh Token은 HttpOnly 쿠키에 저장 → JS 접근 불가, Axios가 자동 포함(withCredentials: true).  
+   - axios 인스턴스에서 withCredentials: true 설정 OK.
+   - 프론트 코드에서 Refresh Token을 직접 건드리지 않음 OK.
+
+2. Access Token은 CSR에서는 localStorage/쿠키에 저장, SSR에서는 서버에서 req.cookies를 읽어 처리.  
+   - CSR: OAuth2Callback, 로그인 로직에서 localStorage 저장 OK.  
+   - SSR: getServerSideProps에서 req.headers.cookie를 전달, /auth/me로 인증 확인 OK.
+
+3. Axios 인터셉터로 401 발생 시 /auth/refresh.  
+   - lib/axios.js 응답 인터셉터에서 401 처리 → /auth/refresh 호출 → 새 Access Token 저장 후 원 요청 재시도 OK.
+
+ front/reducers/
+  ┣ authReducer.js
+  ┣ __tests__
+  ┗ index.js   → combineReducers
+
+##### 포트폴리오
+※ API 사용
+◎1. 주제          :
+◎2. 주요역할(CRUD) : BACK -  API + BOOT + JWT + REDIS + OAUTH2.0 /  FRONT -  REACT + NEXT + ANTD
+◎3. 흐름도 + 피그마
+◎4. 프로젝트 깃허브에 올리기  / back , front (팀장 : 팀원들은 내려받아서 테스트)
+
+---------------------------------------------------------------------------  [1차]
+◎5. ERD
+    1) 주요기능 -  
+    2) 기능 또는 맞춰서 테이블   (상담)
+    create : sql
+    read   : 
+    update : 
+    delete :   
+◎6. 개발 [BACK + FRONT]
+
+> 구글시트 작성예시)
+
+https://docs.google.com/spreadsheets/d/1s5dTXFDuNB1LPfwZl9G2DNnVyv8UcdMAdDu_rVy5AEk/edit?gid=576642430#gid=576642430
+
+sally03915@gmail.com
+
+---------------------------------------------------------------------------  [2차]
+
+
+ 
